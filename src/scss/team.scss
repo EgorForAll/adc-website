@@ -1,0 +1,115 @@
+.team {
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.team__wrapper {
+  @include make-center;
+  min-height: min-content;
+  box-sizing: border-box;
+  flex-direction: column;
+  @media (max-width: $desktop-width) {
+    margin: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.team__list {
+  @include list;
+  @include flexSize(100%, 300px);
+  position: relative;
+  box-sizing: border-box;
+  margin: 50px 0;
+  padding: 50px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 100px;
+  row-gap: 50px;
+  flex-wrap: wrap;
+  border-top: 1px solid $white-chocolate;
+  border-bottom: 1px solid $white-chocolate;
+  @media (max-width: $desktop-width) {
+    max-width: 500px;
+    margin: 30px 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.team__item {
+  position: relative;
+  @include flexSize(100%, 200px);
+  display: grid;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(251, 239, 229, 0.32);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 30px;
+  z-index: 1;
+  @media (max-width: $desktop-width) {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "team__item-wrapper team__item-text1"
+      "team__item-wrapper team__item-text2";
+  }
+}
+
+.team__item-avatar {
+  border-radius: 50%;
+  margin-bottom: 20px;
+  object-fit: cover;
+  z-index: 2;
+  @media (max-width: $desktop-width) {
+    transform: translateY(20px);
+  }
+}
+
+.team__title {
+  @include section-title ($white-chocolate);
+}
+
+.team__item-text1 {
+  @media (max-width: $desktop-width) {
+    grid-area: team__item-text1;
+    transform: translateY(30%);
+  }
+}
+
+.team__item-text2 {
+  @media (max-width: $desktop-width) {
+    grid-area: team__item-text2;
+    transform: translateY(30%);
+  }
+}
+
+.team__item-text1, .team__item-text2 {
+  display: block;
+  font-family: $PT-Sans-Caption;
+  line-height: 23px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-weight: 700;
+  @media (max-width: $desktop-width) {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+
+.team__avatar-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  @media (max-width: $desktop-width) {
+    grid-area: team__item-wrapper;
+    box-sizing: border-box;
+  }
+}

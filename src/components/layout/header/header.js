@@ -1,22 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import Logo from "../../../assets/img/logo-header.svg";
+import LogoDesk from "../../../assets/img/logo-header-desktop.svg";
 
 const Header = () => {
+  const [isOpened, setStatus] = useState(false);
+
     return (
-        <header class="page-header">
-            <div class="header__wrapper">
-                <div class="header__left">
-                <a href="/" class="header__logo">
+        <header className="page-header">
+            <div className="header__wrapper">
+                <div className="header__left">
+                <a href="/" className="header__logo">
                     <picture>
-                    <source media="(max-width: 1152px)" srcset=".assets/img/logo/logo-header.svg" />
-                    <img height="50" class="header__img" src="./assets/img/logo/logo-header-desktop.svg" alt="Логотип" />
+                    <source media="(max-width: 1152px)" srcSet={Logo} />
+                    <img height="50" className="header__img" src={LogoDesk} alt="Логотип" />
                     </picture>
                 </a>
-                <button class="header__button"></button>
+                <button className="header__button" onClick={() => setStatus(!isOpened)}></button>
                 </div>
-                <nav class="header__nav">
-                <a href="/" class="header__link--active">Главная</a>
-                <a href="/" class="header__link">Каталог</a>
-                <a href="/" class="header__link">Контакты</a>
+                <nav className="header__nav" style={{display: `${isOpened ? `flex` : 'none'}`}}>
+                <a href="/" className="header__link--active">Главная</a>
+                <a href="/" className="header__link">Каталог</a>
+                <a href="/" className="header__link">Контакты</a>
                 </nav>
             </div>
         </header>

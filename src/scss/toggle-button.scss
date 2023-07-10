@@ -1,0 +1,27 @@
+.toggle__button {
+  cursor: pointer;
+  position: relative;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  transform: rotate(180deg);
+
+  &--right {
+    cursor: pointer;
+    position: relative;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+  }
+
+  @media (max-width: $desktop-width) {
+    right: 0%;
+  }
+}
+
+.button__svg {
+  @include size (157px, 157px);
+  @media (max-width: $desktop-width) {
+    @include size(50px, 50px);
+  }
+}

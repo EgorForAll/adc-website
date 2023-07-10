@@ -1,29 +1,31 @@
 {
-  "name": "webpack-5-react",
+  "name": "adc-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "Вебсайт ООО АДС",
   "main": "index.js",
   "scripts": {
     "start": "cross-env SERVE=true webpack serve",
+    "test": "npm run eslint",
     "build": "webpack",
     "build-prod": "webpack --mode=production",
     "clean": "rd /s /q dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/aAleksandrOrlov/webpack-5-config.git"
+    "url": "git+https://github.com/EgorForAll/adc-website.git"
   },
   "keywords": [
     "JavaScript",
     "Webpack",
-    "Node"
+    "Node",
+    "ADC"
   ],
   "author": "aleksandr <aleksandr.orlov.dev@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/aAleksandrOrlov/webpack-5-config/issues"
+    "url": "https://github.com/EgorForAll/adc-website.git/issues"
   },
-  "homepage": "https://github.com/aAleksandrOrlov/webpack-5-config#readme",
+  "homepage": "https://github.com/EgorForAll/adc-website.git-config#readme",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
@@ -32,6 +34,10 @@
     "babel-loader": "^8.2.3",
     "cross-env": "^7.0.3",
     "css-loader": "^6.5.1",
+    "eslint": "8.44.0",
+    "eslint-config-htmlacademy": "9.1.1",
+    "eslint-plugin-react": "7.32.2",
+    "file-loader": "6.2.0",
     "html-loader": "^3.0.1",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.4.5",
@@ -47,6 +53,8 @@
   },
   "dependencies": {
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-inlinesvg": "^3.0.2",
+    "react-scripts": "^5.0.1"
   }
 }

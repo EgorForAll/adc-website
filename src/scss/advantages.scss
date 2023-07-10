@@ -1,0 +1,119 @@
+.page-advantages {
+  background-color: $background-color;
+}
+
+.advatages-wrapper {
+@include make-center;
+flex-direction: column;
+@media (max-width: $desktop-width) {
+  margin: 0 20px;
+}
+}
+
+.advantages__title {
+  @include section-title($white-chocolate);
+}
+
+.advantages__list {
+  @include list;
+  position: relative;
+  width: 100%;
+  margin: 70px 0;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-template-rows: min-content min-content;
+  column-gap: 5%;
+  row-gap: 70px;
+
+  @media (max-width: $desktop-width) {
+    @include flexSize (100%, 1000px);
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.advantages__item {
+  min-height: 300px;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: baseline;
+  border-radius: 45px;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 0.25);
+  background-color: #BC9D80BF;
+
+  @media (max-width: $desktop-width) {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-end;
+    min-height: 100px;
+    background-color: transparent;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  &::before {
+    position: absolute;
+    top: 0px;
+    left: 20px;
+    content: '';
+    @include size(125px, 125px);
+    background-image: url("./assets/img/advantages-svg/quality.svg");
+    background-repeat: no-repeat;
+    transform: translate(10px, 30px);
+    @media (max-width: $desktop-width) {
+      top: 2%;
+      left: 0;
+      transform: translate(0);
+    }
+  }
+
+  &:nth-child(2) {
+    &::before {
+      background-image: url("./assets/img/advantages-svg/experience.svg");
+    }
+  }
+  &:nth-child(3) {
+    &::before {
+      background-image: url("./assets/img/advantages-svg/one-place.svg");
+    }
+  }
+  &:nth-child(4) {
+    &::before {
+      background-image: url("./assets/img/advantages-svg/buses.svg");
+    }
+  }
+  &:nth-child(5) {
+    &::before {
+      background-image: url("./assets/img/advantages-svg/truck.svg");
+    }
+  }
+  &:nth-child(6) {
+    &::before {
+      background-image: url("./assets/img/advantages-svg/control.svg");
+    }
+  }
+}
+
+.advantages__item-text {
+  width: 280px;
+  font-family: $PT-Sans-Caption;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 30px;
+  display: flex;
+  transform: translateY(150px);
+  @media (max-width: $desktop-width) {
+    font-size: 15px;
+    width: 50%;
+    transform: translateY(0);
+    text-align: start;
+  }
+}
