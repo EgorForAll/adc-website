@@ -1,6 +1,6 @@
 import React from "react"
 import IntroButton from "../../ui/intro-button/intro-button";
-import { isMobile } from "../../../utils";
+import { isMobileScreen } from "../../../utils";
 
 const Intro = () => {
 
@@ -13,7 +13,7 @@ const Intro = () => {
             Больше 20 лет опыта в сфере обслуживания автомобилей, больше десяти тысяч довольных клиентов и больше сотни тысяч покоренных трасс.
           </p>
         </div>
-        {!isMobile() ? null : <IntroButton/>}
+        {isMobileScreen() ? null : <IntroButton/>}
       </div>
     </section>
   )

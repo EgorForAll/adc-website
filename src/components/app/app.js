@@ -1,13 +1,15 @@
 import React from "react";
-import Header from "../layout/header/header";
-import MainPage from "../pages/main-page";
+import { Route, Switch } from "react-router-dom";
+import MainPage from "../pages/main-page/main-page";
+import CatalogPage from "../pages/catalog-page/catalog-page";
 
 const App = () => {
-    return (
-        <>
-            <MainPage />
-        </>
-    )
+  return (
+    <Switch>
+        <Route path="/catalog" component={CatalogPage} exact/>
+        <Route path="/" component={MainPage} exact/>
+    </Switch>
+  )
 }
 
 export default App;
