@@ -12,6 +12,10 @@ const Header = () => {
     isMobileScreen() ? setScreen(true) :setScreen(false);
   })
 
+  useEffect(() => {
+    console.log(window.location.pathname.slice(1));
+  })
+
     return (
         <header className="page-header">
             <div className="header__wrapper">

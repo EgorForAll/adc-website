@@ -1,0 +1,127 @@
+.contacts-page {
+  width: 100%;
+  background-color: $white-chocolate;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacts-page__title {
+  @include section-title($background-color);
+  margin-top: 100px;
+  @media (max-width: $desktop-width) {
+    width: min-content;
+    text-align: center;
+    margin: 50px auto 0;
+  }
+}
+
+.contacts-page__wrapper {
+  @include make-center;
+  flex-direction: column;
+}
+
+.contacts-page__main-info {
+  width: 100%;
+  margin: 100px 0;
+  box-sizing: border-box;
+  background-color: #fbefe6;
+  display: flex;
+  flex-direction: column;
+  border-radius: 45px;
+  padding: 30px 50px;
+
+  @media (max-width: $desktop-width) {
+    width: auto;
+    margin: 50px 20px 30px;
+    padding: 20px 30px;
+  }
+}
+
+.contacts-page__text {
+  width: 100%;
+  font-family: $PT-Sans-Caption;
+  font-size: 20px;
+  color: #363636;
+  font-weight: 400;
+  margin-bottom: 20px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $desktop-width) {
+    font-size: 15px;
+  }
+}
+
+.contacts-page__personal {
+  @include list;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+
+  @media (max-width: $desktop-width) {
+    flex-direction: column;;
+  }
+}
+
+.contacts-page__personal-item {
+  position: relative;
+  width: 275px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: $background-color;
+  border-radius: 20px 20px 0 0;
+
+  @media (max-width: $desktop-width) {
+    width: auto;
+    margin: 30px 20px;
+    border-radius: 20px;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: ' ';
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+    border-left: 138px solid transparent;
+    border-right: 138px solid transparent;
+    border-bottom: 50px solid $white-chocolate;
+    @media (max-width: $desktop-width) {
+      display: none;
+    }
+  }
+}
+
+.contacts-page__personal-title {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-family: $PT-Sans-Caption;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  line-height: 25px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid $white-chocolate;
+}
+
+.contacts-page__personal-text {
+  font-family: $PT-Sans-Caption;
+  font-weight: 400;
+  font-size: 15px;
+  color: #363636;
+  margin-top: 15px;
+}
+
+.contacts-page__map {
+  @include size (100%, 600px);
+  margin-bottom: 100px;
+  border-radius: 30px;
+}

@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "../../layout/header/header";
-import Catalog from "../../blocks/catalog/catalog";
+import Contacts from "../../blocks/contacts-page/contacts";
 import Footer from "../../layout/footer/footer";
 
-const CatalogPage = () => {
+const ContactsPage = () => {
   return (
     <>
       <Header />
-      <Catalog />
+      <Contacts />
       <Footer />
     </>
   );
 };
 
-export default CatalogPage;
+export default ContactsPage;
