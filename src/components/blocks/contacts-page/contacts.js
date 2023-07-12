@@ -1,6 +1,5 @@
-import React from "react";
+import React, {useRef} from "react";
 import { contactsList } from "../../../const";
-import { useRef } from "react/cjs/react.development";
 import { urlMap } from "../../../const";
 import useScript from "../../custom-hook/use-script/use-script";
 

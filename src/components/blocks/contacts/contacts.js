@@ -1,7 +1,10 @@
-import React from "react";
+import React, {useRef} from "react";
+import useScript from "../../custom-hook/use-script/use-script";
+import { urlMap } from "../../../const";
 
 const Contacts = () => {
-
+  const mainMapRef = useRef();
+  useScript(urlMap, mainMapRef);
   return (
     <section className="contacts">
       <div className="contacts__wrapper">
@@ -17,7 +20,7 @@ const Contacts = () => {
             <span className="contacts__time-title">Время работы</span>
             <span className="contacts__time">пн - пт 8:00 - 17:00</span>
           </div>
-          <div className="contacts__map">
+          <div className="contacts__map" ref={mainMapRef}>
           </div>
         </div>
       </div>
