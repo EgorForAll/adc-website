@@ -15,7 +15,12 @@
   border-radius: 30px;
 
   @media (max-width: $desktop-width) {
-    margin: 0 20px;
+    margin-top: -132px;
+    margin-left: -163px;
+    top: 30%;
+    left: 50%;
+    width: auto;
+    padding: 15px 20px;
   }
 }
 
@@ -33,6 +38,9 @@
   font-size: 25px;
   margin: 0;
   margin-bottom: 10px;
+  @media (max-width: $desktop-width) {
+    font-size: 21px;
+  }
 }
 
 %pseudo-block {
@@ -74,6 +82,10 @@
   font-family: $PT-Sans-Caption;
   font-size: 18px;
   font-weight: 400;
+
+  @media (max-width: $desktop-width) {
+    font-size: 15px;
+  }
 }
 
 .modal-window__input {
@@ -82,6 +94,9 @@
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
+  @media (max-width: $desktop-width) {
+    padding: 5px 10px;
+  }
 
   &:focus {
     outline: 4px solid $white-pink-color;
@@ -100,11 +115,16 @@
   font-family: $PT-Sans-Caption;
   font-size: 18px;
   border: none;
-  color: #fff;
+  color: $background-color;
   margin-top: 20px;
   border-radius: 10px;
 
   &:hover {
     background-color: $white-chocolate;
+  }
+
+  @media (max-width: $desktop-width) {
+    padding: 5px 10px;
+    font-size: 15px;
   }
 }

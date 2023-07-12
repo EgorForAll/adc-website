@@ -53,7 +53,7 @@
     width: 100%;
     margin-top: 10px;
     text-align: center;
-    font-size: 25px;
+    font-size: 23px;
   }
 }
 
@@ -64,17 +64,17 @@
   font-weight: 400;
 
   @media (max-width: $desktop-width) {
-    font-size: 15px;
-    line-height: 25px;
-    margin: 0 20px;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0;
+    margin: 20px 20px 10px;
     max-height: 100px;
     text-align: justify;
   }
 }
 
 .intro__button {
-  width: 400px;
-  padding: 30px 10px;
+  padding: 30px 20px;
   margin-bottom: 100px;
   align-self: flex-end;
   font-family: $PT-Sans-Caption;
@@ -82,9 +82,16 @@
   border: none;
   border-radius: 0px 45px;
   background-color: rgba(254, 234, 215);
-  opacity: 0.5;
   &:hover {
-    opacity: 1;
+    background-color: rgb(187, 173, 160);
+  }
+
+  @media (max-width: $desktop-width) {
+    padding: 10px;
+    border-radius: 30px;
+    align-self: center;
+    font-size: 13px;
+    margin: 0 20px 10px;
   }
 }
 
