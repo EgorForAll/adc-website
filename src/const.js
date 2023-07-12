@@ -8,6 +8,12 @@ import wheel from "./assets/img/catalog-images/wheel.png";
 import coverage from "./assets/img/catalog-images/coverage.png";
 import shin from "./assets/img/catalog-images/shin.png";
 import auto from "./assets/img/catalog-images/auto.png";
+import photo1 from "./assets/img/gallery/IMG_20230615_110936.jpg";
+import photo2 from "./assets/img/gallery/IMG_20230615_111006.jpg";
+import photo3 from "./assets/img/gallery/IMG_20230615_111025.jpg";
+import photo4 from "./assets/img/gallery/IMG_20230615_111134.jpg";
+import photo5 from "./assets/img/gallery/IMG_20230615_111315.jpg";
+import photo6 from "./assets/img/gallery/IMG_20230615_111659.jpg";
 
 export const advantagesList = [
     'Качественное исполнение работ',
@@ -116,4 +122,6 @@ export const contactsList = [
     position: 'Мастер участка покраски',
     telephone: '+79867425515'
   }
-]
+];
+
+export const galleryList = [photo1, photo2, photo3, photo4, photo5, photo6];
