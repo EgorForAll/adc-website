@@ -12,9 +12,9 @@ const Header = () => {
     isMobileScreen() ? setScreen(true) :setScreen(false);
   })
 
-  useEffect(() => {
-    console.log(window.location.pathname.slice(1));
-  })
+  const isMainPage = () => window.location.pathname.length === 1 ? 'header__link--active' : 'header__link';
+  const isCatalogPage = () => window.location.pathname.includes('/catalog') ?' header__link--active' : 'header__link';
+  const isContactsPage = () => window.location.pathname.includes('/contacts') ?' header__link--active' : 'header__link';
 
     return (
         <header className="page-header">
@@ -29,9 +29,9 @@ const Header = () => {
                 <button className="header__button" onClick={() => setStatus(!isOpened)}></button>
                 </div>
                 <nav className="header__nav" style={{display: `${isMobile && !isOpened ? `none` : 'flex'}`}}>
-                <Link to="/" className="header__link--active">Главная</Link>
-                <Link to="/catalog" className="header__link">Каталог</Link>
-                <Link to="/contacts" className="header__link">Контакты</Link>
+                <Link to="/" className={isMainPage()}>Главная</Link>
+                <Link to="/catalog" className={isCatalogPage()}>Каталог</Link>
+                <Link to="/contacts" className={isContactsPage()}>Контакты</Link>
                 </nav>
             </div>
         </header>
