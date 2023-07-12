@@ -125,3 +125,5 @@ export const contactsList = [
 ];
 
 export const galleryList = [photo1, photo2, photo3, photo4, photo5, photo6];
+
+export const urlMap = 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A918c38d381c35337998aac1e04dc9c7b0dbd42ca290acd629ba2bd55d2ab175a&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true';

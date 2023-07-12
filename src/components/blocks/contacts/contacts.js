@@ -1,6 +1,7 @@
 import React from "react";
 
 const Contacts = () => {
+
   return (
     <section className="contacts">
       <div className="contacts__wrapper">

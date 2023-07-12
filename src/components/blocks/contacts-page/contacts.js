@@ -1,8 +1,13 @@
 import React from "react";
 import { contactsList } from "../../../const";
-import map from "../../../assets/img/contacts-map.jpg";
+import { useRef } from "react/cjs/react.development";
+import { urlMap } from "../../../const";
+import useScript from "../../custom-hook/use-script/use-script";
 
 const Contacts = () => {
+  const contactsPageMapRef = useRef();
+  useScript(urlMap, contactsPageMapRef);
+
   return (
     <section className="contacts-page">
       <h2 className="contacts-page__title">Контактная информация</h2>
@@ -25,8 +30,7 @@ const Contacts = () => {
             </li>
           )}
         </ul>
-        <div className="contacts-page__map">
-          <img src={map} alt="Геолокация компании" width="100%" height="100%" />
+        <div className="contacts-page__map" ref={contactsPageMapRef}>
         </div>
       </div>
     </section>
