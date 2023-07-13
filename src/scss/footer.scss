@@ -1,6 +1,6 @@
 .footer {
   min-height: 85px;
-  background-color: $black-grey-color;
+  background-color: $background-color;
   @media (max-width: $desktop-width) {
     min-height: 70px;
   }
@@ -20,7 +20,7 @@
   @media (max-width: $desktop-width) {
     width: 100%;
     text-align: center;
-    border-bottom: 1px solid $background-color;
+    border-bottom: 1px solid $bisque-color;
   }
 }
 .footer__links {
@@ -31,7 +31,7 @@
     display: flex;
     justify-content: center;
     padding: 15px 0;
-    border-bottom: 1px solid $background-color;
+    border-bottom: 1px solid $bisque-color;
   }
 }
 
@@ -41,14 +41,14 @@
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  color: $background-color;
+  color: $bisque-color;
   @media (max-width: $desktop-width) {
     display: none;
   }
 }
 
 .vk-svg {
-  fill: $background-color;
+  fill: $bisque-color;
 
   &:hover {
     fill: $white-pink-color;
@@ -68,5 +68,5 @@
 
 .footer__copyright {
   font-size: 18px;
-  color: $background-color;
+  color: $bisque-color;
 }

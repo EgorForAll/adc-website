@@ -31,8 +31,9 @@ figure {
   box-sizing: border-box;
   justify-content: space-between;
   align-items: center;
-  background-color: #ffffff;
+  background-color: $bisque-color;
   border-radius: 30px;
+  border: 2px solid $white-pink-color;
   @media (max-width: $desktop-width) {
     background-color: $background-color;
     border: none;
@@ -66,9 +67,13 @@ figure {
   margin-left: 50px;
   @media (max-width: $desktop-width) {
     margin-left: 0;
-    margin-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 20px;
     width: 100%;
     text-align: start;
+    font-size: 15px;
+    line-height: 18px;
+    color: $bisque-color;
   }
 }
 

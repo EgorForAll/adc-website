@@ -1,14 +1,20 @@
 .gallery {
-  background: $gallery-background;
+  min-height: 100vh;
+  background: $background-color;
   z-index: 1;
+
+  @media (max-width: $desktop-width) {
+    min-height: 400px;
+  }
 }
 .gallery__wrapper {
   @include make-center;
   flex-direction: column;
+  align-items: center;
 }
 
 .gallery__title {
-  @include section-title($background-color);
+  @include section-title($bisque-color);
   justify-self: center;
 }
 
@@ -17,6 +23,7 @@
   justify-content: space-between;
   align-items: center;
   height: 550px;
+  margin-top: 50px;
 
   @media (max-width: $desktop-width) {
     justify-content: center;
@@ -27,15 +34,15 @@
 }
 
 .arrow-svg {
-  fill: $background-color;
+  fill: $bisque-color;
 
   &:hover {
-    fill: #363636;
+    fill: $white-pink-color;
   }
 }
 
 .gallery__image {
-  @include size(800px,  400px);
+  @include size(1000px,  500px);
   box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25);
   @media (max-width: $desktop-width) {
     @include size(250px, 130px);

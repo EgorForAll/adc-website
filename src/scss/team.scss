@@ -1,6 +1,6 @@
 .team {
   width: 100%;
-  background-color: #ffffff;
+  background-color: $bisque-color;
 }
 
 .team__wrapper {
@@ -29,8 +29,8 @@
   column-gap: 100px;
   row-gap: 50px;
   flex-wrap: wrap;
-  border-top: 1px solid $white-chocolate;
-  border-bottom: 1px solid $white-chocolate;
+  border-top: 1px solid $background-color;
+  border-bottom: 1px solid $background-color;
   @media (max-width: $desktop-width) {
     max-width: 500px;
     margin: 30px 0;
@@ -46,9 +46,10 @@
   display: grid;
   padding: 20px;
   box-sizing: border-box;
-  background-color: rgba(251, 239, 229, 0.32);
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
+  background-color: $brown-color;
+  box-shadow: 0px 0px 10px 0px $background-color;
   border-radius: 30px;
+  border: 1px solid $white-chocolate;
   z-index: 1;
   @media (max-width: $desktop-width) {
     width: 100%;
@@ -73,7 +74,7 @@
 }
 
 .team__title {
-  @include section-title ($white-chocolate);
+  @include section-title ($background-color);
 }
 
 .team__item-text1 {
@@ -94,6 +95,7 @@
   display: block;
   font-family: $PT-Sans-Caption;
   line-height: 23px;
+  color: $background-color;
   font-size: 16px;
   margin-bottom: 20px;
   text-align: center;

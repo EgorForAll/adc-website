@@ -34,6 +34,7 @@
 
 .modal-window__title {
   font-family: $PT-Sans-Caption;
+  color: $bisque-color;
   font-weight: 700;
   font-size: 25px;
   margin: 0;
@@ -50,7 +51,7 @@
   top: 50%;
   transform: rotate(45deg);
   @include size(25px, 2px);
-  background-color: #000;
+  background-color: $bisque-color;
 }
 
 .modal-window__btn-close {
@@ -80,6 +81,7 @@
 
 .modal__window-subtitle {
   font-family: $PT-Sans-Caption;
+  color: $bisque-color;
   font-size: 18px;
   font-weight: 400;
 
@@ -92,7 +94,7 @@
   border: 1px solid #363636;
   margin: 10px 0;
   padding: 10px;
-  background-color: #fff;
+  background-color: #d8d7d7;
   border-radius: 10px;
   @media (max-width: $desktop-width) {
     padding: 5px 10px;
@@ -111,16 +113,18 @@
 
 .modal__window__button-submit {
   padding: 10px 20px;
-  background-color:#363636;
+  background-color: #488047;
+  color: #d8d7d7;
   font-family: $PT-Sans-Caption;
   font-size: 18px;
   border: none;
-  color: $background-color;
   margin-top: 20px;
   border-radius: 10px;
+  transition: background-color 0.5s ease-in 0;
 
   &:hover {
-    background-color: $white-chocolate;
+    background-color: #365c36;
+    transition: background-color 0.8s linear;
   }
 
   @media (max-width: $desktop-width) {

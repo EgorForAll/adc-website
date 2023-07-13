@@ -1,6 +1,12 @@
 .page-header {
   width: 100%;
-  background-color: #363636;
+  background-color: $background-color;
+  @media (max-width: $desktop-width) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
 }
 
 .header__wrapper {
@@ -15,6 +21,7 @@
   @media (max-width: $desktop-width) {
     width: 100%;
     flex-direction: column;
+    height: 30px;
   }
 }
 
@@ -36,8 +43,8 @@
   width: 30px;
   height: 20px;
   background-color: transparent;
-  border-bottom: 2px solid $background-color;
-  border-top: 2px solid $background-color;
+  border-bottom: 2px solid $bisque-color;
+  border-top: 2px solid $bisque-color;
   border-left: none;
   border-right: none;
 
@@ -49,7 +56,7 @@
     height: 2px;
     left: 0;
     top: 49%;
-    background-color: $background-color;
+    background-color: $bisque-color;
   }
 
   @media (min-width: $desktop-width) {

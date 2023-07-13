@@ -11,6 +11,7 @@ const Contacts = () => {
     <section className="contacts-page">
       <h2 className="contacts-page__title">Контактная информация</h2>
       <div className="contacts-page__wrapper">
+        <div className="contacts-page__info">
         <div className="contacts-page__main-info">
           <span className="contacts-page__text">Адрес: Нижегородская область, Городецкий район, г. Заволжье, ул. Баумана 1а.</span>
           <span className="contacts-page__text">Контактные номера стола заказов: <a href="tel:+78316121737">+7-831-612-17-37</a>, <a href="tel:+78316121728">+7-831-612-17-28</a>.</span>
@@ -29,8 +30,9 @@ const Contacts = () => {
             </li>
           )}
         </ul>
-      </div>
-      <div className="contacts-page__map" ref={contactsPageMapRef}>
+        </div>
+        <div className="contacts-page__map" ref={contactsPageMapRef}>
+        </div>
       </div>
     </section>
   );

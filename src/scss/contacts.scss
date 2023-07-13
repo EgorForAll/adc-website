@@ -1,16 +1,22 @@
 .contacts {
-  background: $contacts-background;
+  background: $bisque-color;
+  @media (max-width: $desktop-width) {
+    background-color: $black-grey-color;
+  }
 }
 
 .contacts__wrapper {
   @include make-center;
   flex-direction: column;
-  min-height: 750px;
 }
 
 .contacts__title {
-  @include section-title($black-grey-color);
+  @include section-title($background-color);
   margin-bottom: 50px;
+  @media (max-width: $desktop-width) {
+    color: $bisque-color;
+    border-bottom: 1px solid $bisque-color;
+  }
 }
 
 .contacts__container {
@@ -18,13 +24,16 @@
   min-height: 500px;
   grid-template-columns: 1fr 1fr;
   background-color: #ffffff;
-  box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 50px;
+  box-shadow: 5px 5px 4px 0px $background-color;
 
   @media (max-width: $desktop-width) {
     position: relative;
-    margin: 40px 20px;
+    margin-top: 50px;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
+    box-shadow: none;
   }
 }
 
@@ -32,19 +41,13 @@
   display: flex;
   flex-direction: column;
   padding: 50px;
+  background-color: $black-grey-color;
+  color: #fff;
   @media (max-width: $desktop-width) {
-    padding: 40px 20px;
+    padding: 0 20px 20px;
   }
 }
 
-.contacts__map {
-  @include size (100%, 100%);
-  @media (max-width: $desktop-width) {
-    width: 100%;
-    height: 290px;
-    background-size: 100% ;
-  }
-}
 
 .contacts__company {
   font-family: $PT-Sans-Caption;
@@ -85,7 +88,7 @@
   font-family: $PT-Sans-Caption;
   font-size: 25px;
   font-weight: 700;
-  color: #dba61c;
+  color: #ffde88;
   text-transform: uppercase;
   margin-top: 30px;
   @media (max-width: $desktop-width) {
@@ -102,5 +105,10 @@
   @media (max-width: $desktop-width) {
     font-size: 15px;
   }
+}
 
+.contacts__map {
+  @media (max-width: $desktop-width) {
+    height: 400px;
+  }
 }
