@@ -18,8 +18,12 @@ const ModalWindow = ({parent, root,  type}) => {
         <input id="email" className="modal-window__input" type="email"/>
         <label className="modal__window-subtitle" htmlFor="type">Выберите услугу</label>
         <select className="modal-window__input" id="type">
-          <option>-</option>
-          {catalogList.map((item) => <option selected={type && type === item.name ? true : false}>{item.name}</option>)}
+          <option value={'-'}>-</option>
+          {catalogList.map((item) => <option
+            key={catalogList.indexOf(item)}
+              value={item.name}>
+                  {item.name}
+            </option>)}
         </select>
         <label className="modal__window-subtitle">Комментарий</label>
         <textarea className="modal-window__input--textarea" />

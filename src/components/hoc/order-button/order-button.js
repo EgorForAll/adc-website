@@ -6,14 +6,16 @@ function OrderButton(WrappedComponent) {
   return class extends React.Component {
     constructor(props) {
       super(props);
+      this.overlay = document.createElement('div');
+      this.rootElement = document.querySelector('#root');
       this.onClickButton = this.onClickButton.bind(this);
     }
 
     componentDidMount() {
       const handleEsc = (event) => {
         if (event.key === 'Escape') {
-          if (rootElement.children[0] === overlay) {
-            rootElement.removeChild(overlay);
+          if (this.rootElement.children[0] === this.overlay) {
+            this.rootElement.removeChild(this.overlay);
           }
           return;
         }
@@ -26,15 +28,13 @@ function OrderButton(WrappedComponent) {
     }
 
     onClickButton() {
-      const rootElement = document.querySelector('#root');
-      const overlay = document.createElement('div');
-      overlay.style.position = 'absolute';
-      overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-      overlay.style.zIndex ='100';
-      overlay.style.width = '100%';
-      overlay.style.height = '100%';
-      rootElement.insertAdjacentElement('afterbegin', overlay);
-      ReactDOM.render(<ModalWindow parent={overlay} root={rootElement} />, overlay);
+      this.overlay.style.position = 'absolute';
+      this.overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+      this.overlay.style.zIndex ='100';
+      this.overlay.style.width = '100%';
+      this.overlay.style.height = '100%';
+      this.rootElement.insertAdjacentElement('afterbegin', this.overlay);
+      ReactDOM.render(<ModalWindow parent={this.overlay} root={this.rootElement} />, this.overlay);
     }
 
     render() {
