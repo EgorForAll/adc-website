@@ -1,7 +1,9 @@
 import React from "react"
-import OrderButton from "../../ui/order-button/order-button";
+import OrderButton from "../../hoc/order-button/order-button";
+import IntroButton from "../../ui/intro-button/intro-button";
 
 const Intro = () => {
+  const OrderButtonIntro = OrderButton(IntroButton);
 
   return (
     <section className="intro">
@@ -12,7 +14,7 @@ const Intro = () => {
             Больше 20 лет опыта в сфере обслуживания автомобилей, больше десяти тысяч довольных клиентов и больше сотни тысяч покоренных трасс.
           </p>
         </div>
-        <OrderButton />
+        <OrderButtonIntro />
       </div>
     </section>
   )
