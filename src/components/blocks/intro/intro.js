@@ -1,6 +1,5 @@
 import React from "react"
-import IntroButton from "../../ui/intro-button/intro-button";
-import { isMobileScreen } from "../../../utils";
+import OrderButton from "../../ui/order-button/order-button";
 
 const Intro = () => {
 
@@ -13,7 +12,7 @@ const Intro = () => {
             Больше 20 лет опыта в сфере обслуживания автомобилей, больше десяти тысяч довольных клиентов и больше сотни тысяч покоренных трасс.
           </p>
         </div>
-        <IntroButton />
+        <OrderButton />
       </div>
     </section>
   )

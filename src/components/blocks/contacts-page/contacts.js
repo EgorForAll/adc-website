@@ -29,8 +29,8 @@ const Contacts = () => {
             </li>
           )}
         </ul>
-        <div className="contacts-page__map" ref={contactsPageMapRef}>
-        </div>
+      </div>
+      <div className="contacts-page__map" ref={contactsPageMapRef}>
       </div>
     </section>
   );

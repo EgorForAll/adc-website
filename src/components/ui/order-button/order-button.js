@@ -2,7 +2,7 @@ import React, { useCallback, useEffect} from "react";
 import ReactDOM from 'react-dom';
 import ModalWindow from "../modal-window/modal-window";
 
-const IntroButton = () => {
+const OrderButton = ({title}) => {
   const rootElement = document.querySelector('#root');
   const overlay = document.createElement('div');
 
@@ -37,8 +37,8 @@ const IntroButton = () => {
   }
 
     return (
-        <button className="intro__button" onClick={() => onClickButton()}>Записаться на техосблуживание</button>
+        <button className="intro__button" onClick={() => onClickButton()}>Записаться на техобслуживание</button>
     );
 }
 
-export default IntroButton;
+export default OrderButton;

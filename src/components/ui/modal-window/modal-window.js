@@ -1,6 +1,7 @@
 import React from "react";
+import { catalogList } from "../../../const";
 
-const ModalWindow = ({parent, root}) => {
+const ModalWindow = ({parent, root,  type}) => {
 
   return (
     <div className="modal-window">
@@ -18,13 +19,7 @@ const ModalWindow = ({parent, root}) => {
         <label className="modal__window-subtitle" htmlFor="type">Выберите услугу</label>
         <select className="modal-window__input" id="type">
           <option>-</option>
-          <option>Ремонт двигателя</option>
-          <option>Ремонт МКПП</option>
-          <option>Ремонт ходовой части</option>
-          <option>Развал-схождение</option>
-          <option>Обработка авто защитным составом</option>
-          <option>Технический осмотр</option>
-          <option>Шиномонтаж</option>
+          {catalogList.map((item) => <option selected={type && type === item.name ? true : false}>{item.name}</option>)}
         </select>
         <label className="modal__window-subtitle">Комментарий</label>
         <textarea className="modal-window__input--textarea" />
