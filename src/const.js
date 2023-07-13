@@ -46,12 +46,12 @@ export const teamList = [
     },
     {
         name: 'Гурылев Александр Андреевич',
-        position: 'Директор',
+        position: 'Мастер СТО',
         avatar: director
     },
     {
         name: 'Борисов Борис Борисович',
-        position: 'Мастер',
+        position: 'Начальник участка мехобработки',
         avatar: borisov
     },
     {

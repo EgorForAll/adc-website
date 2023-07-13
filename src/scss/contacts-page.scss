@@ -17,12 +17,16 @@
 
 .contacts-page__wrapper {
   @include make-center;
+  margin-bottom: 100px;
   flex-direction: column;
+  @media (max-width: $desktop-width) {
+    margin-bottom: 0;
+  }
 }
 
 .contacts-page__main-info {
   width: 100%;
-  margin: 100px 0;
+  margin: 50px 0 100px;
   box-sizing: border-box;
   background-color: #fbefe6;
   display: flex;
@@ -121,7 +125,7 @@
 }
 
 .contacts-page__map {
-  @include size (100%, 600px);
+  @include size (100%, 400px);
   border-radius: 30px;
   @media (max-width: $desktop-width) {
     height: 350px;

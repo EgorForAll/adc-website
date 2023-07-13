@@ -1,8 +1,8 @@
 import React from "react";
 import { catalogList } from "../../../const";
 
-const ModalWindow = ({parent, root,  type}) => {
-
+const ModalWindow = ({parent, root, service}) => {
+  const selected = (item) => service === item.name ? 'selected' : null;
   return (
     <div className="modal-window">
       <div className="modal-window__tab">
@@ -17,12 +17,15 @@ const ModalWindow = ({parent, root,  type}) => {
         <label htmlFor="email" className="modal__window-subtitle">Email:</label>
         <input id="email" className="modal-window__input" type="email"/>
         <label className="modal__window-subtitle" htmlFor="type">Выберите услугу</label>
-        <select className="modal-window__input" id="type">
-          <option value={'-'}>-</option>
-          {catalogList.map((item) => <option
-            key={catalogList.indexOf(item)}
-              value={item.name}>
-                  {item.name}
+        <select defaultValue={service} className="modal-window__input" id="type">
+          <option value={'defualt'}>-</option>
+          {catalogList.map((item) =>
+            <option
+              key={catalogList.indexOf(item)}
+                value={item.name}
+                  selected={selected(item)}
+                  >
+                    {item.name}
             </option>)}
         </select>
         <label className="modal__window-subtitle">Комментарий</label>
