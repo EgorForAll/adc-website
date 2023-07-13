@@ -9,22 +9,24 @@ function OrderButton(WrappedComponent) {
       this.overlay = document.createElement('div');
       this.rootElement = document.querySelector('#root');
       this.onClickButton = this.onClickButton.bind(this);
+      this.handleEsc = this.handleEsc.bind(this);
+    }
+
+    handleEsc(evt) {
+      if (evt.key === 'Escape') {
+        if (this.rootElement.children[0] === this.overlay) {
+          this.rootElement.removeChild(this.overlay);
+        }
+        return;
+      }
     }
 
     componentDidMount() {
-      const handleEsc = (event) => {
-        if (event.key === 'Escape') {
-          if (this.rootElement.children[0] === this.overlay) {
-            this.rootElement.removeChild(this.overlay);
-          }
-          return;
-        }
-      };
-      window.addEventListener('keydown', handleEsc);
+      window.addEventListener('keydown', this.handleEsc);
     }
 
     componentWillUnmount() {
-      window.removeEventListener('keydown', handleEsc);
+      window.removeEventListener('keydown', this.handleEsc);
     }
 
     onClickButton() {
