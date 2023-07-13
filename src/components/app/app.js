@@ -11,7 +11,7 @@ const App = () => {
         <Route path="/catalog" component={CatalogPage} exact/>
         <Route path="/contacts" component={ContactsPage} exact/>
         <Route path="/" component={MainPage} exact/>
-        <Route path="*" render={() => <PageNotFound />}/>
+        <Route path="*" component={PageNotFound}/>
     </Switch>
   )
 }

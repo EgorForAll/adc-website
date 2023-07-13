@@ -31,6 +31,7 @@ module.exports = {
   entry: './src/index.js',
   devServer: {
     static: './dist',
+    historyApiFallback: true,
     hot: true,
     open: true,
     port: 1337
@@ -40,6 +41,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
+    publicPath: '/'
   },
 
   module: {
