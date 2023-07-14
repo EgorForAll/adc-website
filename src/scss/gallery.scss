@@ -1,5 +1,5 @@
 .gallery {
-  min-height: 100vh;
+  min-height: 110vh;
   background: $background-color;
   z-index: 1;
 
@@ -22,7 +22,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 550px;
+  width: 100%;
+  height: 600px;
   margin-top: 50px;
 
   @media (max-width: $desktop-width) {
@@ -33,18 +34,30 @@
   }
 }
 
-.arrow-svg {
-  fill: $bisque-color;
-
-  &:hover {
-    fill: $white-pink-color;
-  }
-}
-
 .gallery__image {
   @include size(1000px,  500px);
   box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25);
   @media (max-width: $desktop-width) {
     @include size(250px, 130px);
   }
+}
+
+.swiper-button-prev {
+  @include sliderButton();
+  left: 50px !important;
+}
+
+.swiper-button-next {
+  @include sliderButton();
+  right: 50px !important;
+}
+
+.swiper-pagination-bullet {
+  width: 20px !important;
+  height: 20px !important;
+  background-color: $bisque-color !important;
+}
+
+.swiper-pagination {
+  bottom: 20px !important;
 }

@@ -1,5 +1,5 @@
 .contacts {
-  background: $bisque-color;
+  background: $white-pink-color;
   @media (max-width: $desktop-width) {
     background-color: $black-grey-color;
   }
@@ -24,7 +24,7 @@
   min-height: 500px;
   grid-template-columns: 1fr 1fr;
   background-color: #ffffff;
-  margin-bottom: 50px;
+  margin-bottom: 100px;
   box-shadow: 5px 5px 4px 0px $background-color;
 
   @media (max-width: $desktop-width) {

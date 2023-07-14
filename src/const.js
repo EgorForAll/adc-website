@@ -14,6 +14,10 @@ import photo3 from "./assets/img/gallery/IMG_20230615_111025.jpg";
 import photo4 from "./assets/img/gallery/IMG_20230615_111134.jpg";
 import photo5 from "./assets/img/gallery/IMG_20230615_111315.jpg";
 import photo6 from "./assets/img/gallery/IMG_20230615_111659.jpg";
+import photo7 from "./assets/img/gallery/6xp7Y2DiTDI.jpg";
+import photo8 from "./assets/img/gallery/IMG_20230615_111508.jpg";
+import photo9 from "./assets/img/gallery/LHyStNhknvs.jpg";
+import photo10 from "./assets/img/gallery/xi8OPp_yrf0.jpg";
 
 export const advantagesList = [
     'Качественное исполнение работ',
@@ -124,6 +128,6 @@ export const contactsList = [
   }
 ];
 
-export const galleryList = [photo1, photo2, photo3, photo4, photo5, photo6];
+export const galleryList = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10];
 
 export const urlMap = 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A918c38d381c35337998aac1e04dc9c7b0dbd42ca290acd629ba2bd55d2ab175a&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true';

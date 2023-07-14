@@ -40,7 +40,7 @@
   &::before {
     position: absolute;
     content: '';
-    top: 15px;
+    top: 20px;
     left: -130px;
     width: 100px;
     height: 20px;;
@@ -53,7 +53,7 @@
   &::after {
       position: absolute;
       content: '';
-      top: 15px;
+      top: 20px;
       right: -130px;
       width: 100px;
       height: 20px;;
@@ -68,4 +68,14 @@
 @mixin slideRight () {
   transform: translateX(-150%);
   animation: ani 1s forwards;
+}
+
+@mixin sliderButton () {
+  color: $bisque-color !important;
+  &:hover {
+    color: $background-color !important;
+  }
+  &::after {
+    font-size: 150px !important;
+  }
 }
