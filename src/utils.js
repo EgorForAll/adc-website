@@ -1,43 +1,46 @@
 export const isMobileScreen = () => window.screen.width < 1152 ? true : false;
 
-const emailCheck = (input) => /^[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}$/i.test(input.value) ;
+const emailCheck = (input) => /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/ .test(input.value);
 
-const nameCheck = (input) => input.value.lenght <= 1 ? input.classList.add('error') : null;
+const nameCheck = (input) => /^[a-z]+$/i.test(input.value) && input.value.length >= 2;
 
-const formValidate = (form) => {
+export const formValidate = (form, phoneMask) => {
   let errors = 0;
-  let formReq = form.querySelectorAll('.req');
-  console.log(formReq);
-
-  for (let input of formReq) {
-    if (input.classList.contain('name')) {
-      nameCheck(input);
-      errors++
-    }
-
-    if (input.classList.contain('email')) {
-      if (emailCheck(input)) {
-        input.classList.add('error');
-        errors++
-      }
-    }
+  const nameInput = form.querySelector('.name');
+  const emailInput = form.querySelector('.email');
+  const phoneInput = form.querySelector('.phone');
+  const checkboxInput = form.querySelector('#checkbox');
+  const checkboxLabel = form.querySelector('.checkbox-label ');
+  console.log(checkboxLabel);
+  if (!nameCheck(nameInput)) {
+    nameInput.classList.add('error');
+    errors++;;
   }
-  return errors
+  if (!emailCheck(emailInput)) {
+    emailInput.classList.add('error');
+      errors++;
+  }
+  if (!phoneMask.masked.isComplete) {
+    phoneInput.classList.add('error');
+    errors++;
+  }
+  if (checkboxInput.checked === false) {
+    checkboxLabel.classList.add('error-checkbox');
+    errors++;
+  }
+  console.log(errors)
+  return errors;
 }
 
-export const validateForm = () => {
-  const form = document.querySelector('.modal-window__form');
-  console.log(form)
-  form.addEventListener('submit', formSend);
+export async function formSend (evt, form) {
+  evt.preventDefault();
+  const errorsTotal = formValidate(form);
 
-  async function formSend (evt) {
-    evt.preventDefault();
-    let errors = formValidate(form);
-
-    if (errors === 0) {
-      console.log('Ошибок нет')
-    } else {
-      alert('Заполните обязательные поля формы');
-    }
+  if (errorsTotal === 0) {
+    console.log('Ошибок нет')
+  } else {
+    alert('Заполните обязательные поля формы');
   }
 }
+
+

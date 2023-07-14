@@ -5,7 +5,7 @@
   flex-direction: column;
   top: 50%;
   left: 50%;
-  margin-top: -303px;
+  margin-top: -370px;
   margin-left: -250px;
   padding: 20px 50px;
   width: 500px;
@@ -93,25 +93,36 @@
 .modal-window__input {
   border: 1px solid #363636;
   margin: 10px 0;
-  padding: 10px;
+  padding: 5px 10px;
+  box-sizing: border-box;
   background-color: #d8d7d7;
   border-radius: 10px;
+  font-family: $PT-Sans-Caption;
+  font-size: 14px;
   @media (max-width: $desktop-width) {
     padding: 5px 10px;
   }
 
   &:focus {
-    outline: 4px solid $white-pink-color;
+    outline: 4px solid #488047;
     border: none;
+  }
+
+  &--time {
+    @extend .modal-window__input;
+    margin-left: 10px;
   }
 
   &--textarea {
     @extend .modal-window__input;
     min-height: 100px;
+    resize: vertical;
   }
 }
 
 .modal__window__button-submit {
+  position: relative;
+  top: 0;
   padding: 10px 20px;
   background-color: #488047;
   color: #d8d7d7;
@@ -121,14 +132,76 @@
   margin-top: 20px;
   border-radius: 10px;
   transition: background-color 0.5s ease-in 0;
+  box-shadow: 0 3px 0 #000;
 
   &:hover {
     background-color: #365c36;
-    transition: background-color 0.8s linear;
+    transition: background-color 0.3s linear;
+  }
+
+  &:active {
+    top: 3px;
+    box-shadow: none;
   }
 
   @media (max-width: $desktop-width) {
     padding: 5px 10px;
     font-size: 15px;
   }
+}
+
+.error {
+  box-shadow: 0 0 15px rgb(255, 40, 40);
+}
+
+.error-checkbox {
+  outline: 2px solid rgb(255, 40, 40);
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.modal-window__checkbox-wrapper {
+  display: flex;
+  margin-top: 10px;
+}
+
+.modal-window__input--checkbox {
+  display: none;
+}
+
+.modal-window__input--checkbox:checked + .checkbox-label::after {
+  transform: scale(1);
+}
+
+.checkbox-label {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+  font-size: 13px;
+  font-family: $PT-Sans-Caption;
+  &::before {
+    position: relative;
+    content: '';
+    align-items: flex-start;
+    @include size(20px, 20px);
+    background-color: #d8d7d7;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  &::after {
+    position: absolute;
+    transition: transform 0.3s linear;
+    content: '';
+    border-radius: 5px;
+    @include size(16px, 16px);
+    background-color: #488047;
+    transform: scale(0);
+    left: 2px;
+    @media (max-width: $desktop-width) {
+      left: 1px;
+    }
+  }
+
 }
