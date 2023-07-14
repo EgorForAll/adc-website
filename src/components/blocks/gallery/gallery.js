@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Arrow from "../../../assets/img/arrow.svg";
 import SVG from 'react-inlinesvg';
+import 'swiper/css';
 import { galleryList } from "../../../const";
 
 const Gallery = () => {

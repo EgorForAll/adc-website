@@ -34,6 +34,7 @@ figure {
   background-color: $bisque-color;
   border-radius: 30px;
   border: 2px solid $white-pink-color;
+  @include slideRight();
   @media (max-width: $desktop-width) {
     background-color: $background-color;
     border: none;

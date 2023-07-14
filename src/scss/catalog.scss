@@ -26,6 +26,7 @@
   column-gap: 70px;
   row-gap: 50px;
   margin-bottom: 70px;
+  @include slideRight();
   @media (max-width: $desktop-width) {
     display: flex;
     flex-direction: column;

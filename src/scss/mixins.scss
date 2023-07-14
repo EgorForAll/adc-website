@@ -64,3 +64,8 @@
       }
     }
 }
+
+@mixin slideRight () {
+  transform: translateX(-150%);
+  animation: ani 1s forwards;
+}

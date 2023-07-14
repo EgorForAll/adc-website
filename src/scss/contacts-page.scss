@@ -28,6 +28,7 @@
 
 .contacts-page__info {
   width: 50%;
+  @include slideRight();
   @media (max-width: $desktop-width) {
     padding: 0 20px;
     box-sizing: border-box;
