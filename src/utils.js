@@ -25,7 +25,7 @@ export const formValidate = (form, phoneMask) => {
     errors++;
   }
   if (checkboxInput.checked === false) {
-    checkboxLabel.classList.add('error-checkbox');
+    checkboxInput.classList.add('error');
     errors++;
   }
   console.log(errors)

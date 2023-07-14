@@ -57,7 +57,7 @@ const ModalWindow = ({parent, root, service}) => {
         <label className="modal__window-subtitle">Комментарий</label>
         <textarea className="modal-window__input--textarea" />
         <div className="modal-window__checkbox-wrapper">
-          <input id="checkbox" className="modal-window__input--checkbox visually-hidden" type="checkbox"/>
+          <input id="checkbox" className="modal-window__input--checkbox" type="checkbox"/>
           <label htmlFor="checkbox" className="checkbox-label">Согласие на обработку персональных данных</label>
         </div>
         <button className="modal__window__button-submit" type="submit" >Отправить заявку</button>
