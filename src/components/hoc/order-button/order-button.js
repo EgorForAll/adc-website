@@ -2,11 +2,18 @@ import React from "react";
 import ReactDOM from 'react-dom';
 import ModalWindow from "../../ui/modal-window/modal-window";
 
+const createOverlay = () => {
+  const overlay =  document.createElement('div');
+  overlay.classList.add('overlay');
+  return overlay;
+}
+
+
 function OrderButton(WrappedComponent, service) {
   return class extends React.Component {
     constructor(props) {
       super(props);
-      this.overlay = document.createElement('div');
+      this.overlay = createOverlay();
       this.rootElement = document.querySelector('#root');
       this.onClickButton = this.onClickButton.bind(this);
       this.handleEsc = this.handleEsc.bind(this);
@@ -17,7 +24,7 @@ function OrderButton(WrappedComponent, service) {
 
     handleEsc(evt) {
       if (evt.key === 'Escape') {
-        if (this.rootElement.children[0] === this.overlay) {
+        if (this.rootElement.firstChild === this.overlay) {
           this.rootElement.removeChild(this.overlay);
         }
         return;
@@ -33,11 +40,6 @@ function OrderButton(WrappedComponent, service) {
     }
 
     onClickButton() {
-      this.overlay.style.position = 'absolute';
-      this.overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
-      this.overlay.style.zIndex ='100';
-      this.overlay.style.width = '100%';
-      this.overlay.style.height = '100%';
       this.rootElement.insertAdjacentElement('afterbegin', this.overlay);
       ReactDOM.render(
         <ModalWindow parent={this.overlay} root={this.rootElement} service={this.state.service} />, this.overlay

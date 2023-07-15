@@ -1,4 +1,5 @@
 .modal-window {
+  position: relative;
   position: fixed;
   box-sizing: border-box;
   display: flex;
@@ -13,6 +14,7 @@
   background-color: $background-color;
   border: 10px solid #363636;
   border-radius: 30px;
+  @include slideTop();
 
   @media (max-width: $desktop-width) {
     margin-top: -80px;
@@ -22,6 +24,10 @@
     left: 0;
     padding: 15px 20px;
   }
+}
+
+.modal-window .overlay {
+  border-radius: 25px;
 }
 
 .modal-window__tab {

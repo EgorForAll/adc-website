@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { catalogList } from "../../../const";
 import IMask from 'imask';
-import { formSend, formValidate} from "../../../utils";
+import {formValidate, loaderTemplate, overlayTemplate} from "../../../utils";
 
 const ModalWindow = ({parent, root, service}) => {
   const selected = (item) => service === item.name ? 'selected' : null;
   const formRef = useRef();
+  const modalRef = useRef();
   const phoneRef = useRef();
 
   useEffect(() => {
@@ -15,9 +16,9 @@ const ModalWindow = ({parent, root, service}) => {
     formRef.current.addEventListener('submit', (evt) => {
       evt.preventDefault();
       let errors = formValidate(formRef.current, phoneMask);
-
       if (errors === 0) {
-        console.log('Ошибок нет')
+        modalRef.current.insertAdjacentHTML('afterbegin', loaderTemplate());
+        modalRef.current.insertAdjacentHTML('beforeend', overlayTemplate());
       } else {
         alert('Заполните обязательные поля формы');
       }
@@ -25,7 +26,7 @@ const ModalWindow = ({parent, root, service}) => {
   })
 
   return (
-    <div className="modal-window">
+    <div className="modal-window" ref={modalRef}>
       <div className="modal-window__tab">
         <h3 className="modal-window__title">Заполните заявку</h3>
         <button className="modal-window__btn-close" onClick={() => root.removeChild(parent)}/>

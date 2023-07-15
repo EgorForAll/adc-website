@@ -4,6 +4,10 @@ const emailCheck = (input) => /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+
 
 const nameCheck = (input) => /^[a-z]+$/i.test(input.value) && input.value.length >= 2;
 
+export const loaderTemplate = () => `<span class="loader"></span>`;
+
+export const overlayTemplate = () => `<div class="overlay"></div>`;
+
 export const formValidate = (form, phoneMask) => {
   let errors = 0;
   const nameInput = form.querySelector('.name');
@@ -11,7 +15,6 @@ export const formValidate = (form, phoneMask) => {
   const phoneInput = form.querySelector('.phone');
   const checkboxInput = form.querySelector('#checkbox');
   const checkboxLabel = form.querySelector('.checkbox-label ');
-  console.log(checkboxLabel);
   if (!nameCheck(nameInput)) {
     nameInput.classList.add('error');
     errors++;;
@@ -28,17 +31,27 @@ export const formValidate = (form, phoneMask) => {
     checkboxInput.classList.add('error');
     errors++;
   }
-  console.log(errors)
   return errors;
 }
 
 export async function formSend (evt, form) {
   evt.preventDefault();
   const errorsTotal = formValidate(form);
+  let formData = new FormData(form);
 
   if (errorsTotal === 0) {
-    console.log('Ошибок нет')
-  } else {
+    // let response = await fetch('sendmail.php', {
+    //   method: 'POST',
+    //   body: formData
+    // });
+    // if (response.ok) {
+    //   let result = await response.json();
+    //   alert(result.message);
+    //   form.reset();
+    // } else {
+    //   alert('Ошибка');
+    //   }
+    } else {
     alert('Заполните обязательные поля формы');
   }
 }

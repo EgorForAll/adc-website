@@ -67,7 +67,7 @@
 
 @mixin slideRight () {
   transform: translateX(-150%);
-  animation: ani 1.5s forwards;
+  animation: slide 1.5s forwards;
 }
 
 @mixin sliderButton () {
@@ -82,4 +82,20 @@
       font-size: 50px !important;
     }
   }
+}
+
+@mixin opacity () {
+  opacity: 0;
+  animation: opacityAni 1s forwards;
+}
+
+@mixin slideTop() {
+  transform: translateY(-150%);
+  animation: modal 1s forwards;
+}
+
+@mixin new() {
+  position: absolute; overflow: hidden; top: 15px; left: 0; width: 0;
+  text-align: right; white-space: nowrap;
+  animation: ani 1s linear forwards;
 }
