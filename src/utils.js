@@ -14,7 +14,6 @@ export const formValidate = (form, phoneMask) => {
   const emailInput = form.querySelector('.email');
   const phoneInput = form.querySelector('.phone');
   const checkboxInput = form.querySelector('#checkbox');
-  const checkboxLabel = form.querySelector('.checkbox-label ');
   if (!nameCheck(nameInput)) {
     nameInput.classList.add('error');
     errors++;;
@@ -34,26 +33,18 @@ export const formValidate = (form, phoneMask) => {
   return errors;
 }
 
-export async function formSend (evt, form) {
-  evt.preventDefault();
-  const errorsTotal = formValidate(form);
-  let formData = new FormData(form);
-
-  if (errorsTotal === 0) {
-    // let response = await fetch('sendmail.php', {
-    //   method: 'POST',
-    //   body: formData
-    // });
-    // if (response.ok) {
-    //   let result = await response.json();
-    //   alert(result.message);
-    //   form.reset();
-    // } else {
-    //   alert('Ошибка');
-    //   }
-    } else {
-    alert('Заполните обязательные поля формы');
-  }
+export async function formSend  (form, formData) {
+  let response = await fetch('sendmail.php', {
+    method: 'POST',
+    body: formData
+  });
+  if (response.ok) {
+    let result = await response.json();
+    alert(result.message);
+    form.reset();
+  } else {
+    alert('Ошибка');
+    }
 }
 
 
