@@ -8,7 +8,7 @@ const Catalog = () => {
       <div className="catalog__wrapper">
         <h2 className="catalog__title">Каталог услуг</h2>
         <ul className="catalog__services-container">
-          {catalogList.map((item) => <ProductCard key={catalogList.indexOf(item)} product={item}/>)}
+          {catalogList.map((item) => <ProductCard key={item.id} product={item}/>)}
         </ul>
       </div>
     </section>

@@ -1,4 +1,5 @@
 import director from "./assets/img/team/director.jpg";
+import fedin from "./assets/img/team/fedin.jpg";
 import borisov from "./assets/img/team/borisov.jpg";
 import misha from "./assets/img/team/misha.jpg";
 import engine from "./assets/img/catalog-images/engine.png";
@@ -40,74 +41,87 @@ export const advantagesList = [
 
 export const teamList = [
     {
-        name: 'Иванов Александр Николаевич',
-        position: 'Директор',
-        avatar: director,
-        telephone: '+79308150210',
-        email: 'zst_dir@mail.ru'
+      id: 0,
+      name: 'Иванов Александр Николаевич',
+      position: 'Директор',
+      avatar: director,
+      telephone: '+79308150210',
+      email: 'zst_dir@mail.ru'
     },
     {
-        name: 'Куделин Юрий Викторович',
-        position: 'Технический директор',
-        avatar: director,
-        telephone: '+79081538554'
+      id: 1,
+      name: 'Куделин Юрий Викторович',
+      position: 'Технический директор',
+      avatar: director,
+      telephone: '+79081538554'
     },
     {
-        name: 'Федин Вадим Александрович',
-        position: 'Мастер СТО',
-        avatar: director,
-        telephone: '+79047879000'
+      id: 2,
+      name: 'Федин Вадим Александрович',
+      position: 'Мастер СТО',
+      avatar: fedin,
+      telephone: '+79047879000'
     },
     {
-        name: 'Гурылев Александр Андреевич',
-        position: 'Мастер СТО',
-        avatar: director
+      id: 3,
+      name: 'Гурылев Александр Андреевич',
+      position: 'Мастер СТО',
+      avatar: director
     },
     {
-        name: 'Борисов Борис Борисович',
-        position: 'Начальник участка мехобработки',
-        avatar: borisov
+      id: 4,
+      name: 'Борисов Борис Борисович',
+      position: 'Начальник участка мехобработки',
+      avatar: borisov
     },
     {
-        name: 'Иванов Михаил Александрович',
-        position: 'Мастер участка покраски',
-        avatar: misha,
-        telephone: '+79867425515'
+      id: 5,
+      name: 'Иванов Михаил Александрович',
+      position: 'Мастер участка покраски',
+      avatar: misha,
+      telephone: '+79867425515'
     }
 ];
 
 export const catalogList = [
   {
+    id: 0,
     name: 'Ремонт двигателя',
     description: 'Ремонт двигателей отечественнного и импортного производства. Диганостика, демонтаж и чистка узлов ДВС, мойка двигателя, измерение геометрии деталей, дефектовка коленчатого вала, устранение сколов, задиров, замена втулок, клапонов и т.д.',
     image: engine
   },
   {
+    id: 1,
     name: 'Ремонт МКПП',
     description: 'Снятие и разборка коробки передач с автомобиля, контроль и замена изношенных деталей, испытание коробки передач после ремонта, установка коробки обратно в автомобиль, замена масла.',
     image: box
   },
   {
+    id: 2,
     name: 'Ремонт ходовой части',
     description: 'Замена деталей подвески, замена стойки и втулки стабилизатора, замена верхних и нижних шаровых пор, регулировка подшипников, замена амортизаторов, регулировка ручного тормоза.',
     image: chassis
   },
   {
+    id: 3,
     name: 'Развал-схождение',
     description: 'Регулировка углов положения колес (развал-схождение) согласно конструкции подвески.',
     image: wheel
   },
   {
+    id: 4,
     name: 'Обработка авто защитным составом',
     description: 'Специальное покрытие для долгосрочной защиты кузова автомобиля, яхты, лодки, которое защищает поверхость от механических повреждений, внешних воздейтсвий и коррозии. Кузов вашего транспорта может быть любого цвета. Цвет защитного покрытия подбирается по запросу клиента.',
     image: coverage
   },
   {
+    id: 5,
     name: 'Шиномонтаж',
     description: 'Шиномонтаж легковых и грузовых автомобилей, балансировка колёс',
     image: shin
   },
   {
+    id: 6,
     name: 'Технический осмотр',
     description: 'Проведение технического осмотра транспортного средства в соответствии с федеральным законом 170-ФЗ "О техничском осмотре трансопртных средств".',
     image: auto
@@ -140,61 +154,61 @@ export const contactsList = [
 
 export const galleryList = [
   {
-    id: 1,
+    id: 0,
     url: photo1,
     alt: 'Развал-схождение',
     url_mobile: photo1Mobile
   },
   {
-    id: 2,
+    id: 1,
     url: photo2,
     alt: 'Автоподъемники',
     url_mobile: photo2Mobile
   },
   {
-    id: 3,
+    id: 2,
     url: photo3,
     alt: 'Land Rover, обработка защитным покрытием line-x',
     url_mobile: photo3Mobile
   },
   {
-    id: 4,
+    id: 3,
     url: photo4,
     alt: 'Участок мехобработки',
     url_mobile: photo4Mobile
   },
   {
-    id: 5,
+    id: 4,
     url: photo5,
     alt: 'Ремонт автобуса',
     url_mobile: photo5Mobile
   },
   {
-    id: 6,
+    id: 5,
     url: photo6,
     alt: 'Toyota Mega Cruiser',
     url_mobile: photo6Mobile
   },
   {
-    id: 7,
+    id: 6,
     url: photo7,
     alt: 'Автомобильный эвакуато8',
     url_mobile: photo7Mobile
   },
   {
-    id: 8,
+    id: 7,
     url: photo8,
     alt: 'Процесс шлифовки перед нанесением защитного покрытия Line-X',
     url_mobile: photo8Mobile
   },
   {
-    id: 9,
+    id: 8,
     url: photo9,
     alt: 'Обработка кузова Toyota Tundra защитным покрытием Line-X',
     url_mobile: photo9Mobile
   },
   {
-    id: 10,
+    id: 9,
     url: photo10,
     alt: 'Процесс частичного демонтажа авто перед обработкой защитным покрытием отдельных деталей',
     url_mobile: photo10Mobile
