@@ -9,7 +9,7 @@ const Gallery = () => {
   return (
     <section className="gallery">
       <div className="gallery__wrapper">
-        <h2 className="gallery__title" style={{color: '#FBEFE5'}}>Галлерея</h2>
+        <h2 className="gallery__title">Галлерея</h2>
         <div className="gallery__container">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
@@ -20,8 +20,11 @@ const Gallery = () => {
             slidesPerView={1}
             >
             {galleryList.map((slide) => (
-              <SwiperSlide key={galleryList.indexOf(slide)}>
-                <img src={slide} alt={"Изображение"} width="1240" height="600px"/>
+              <SwiperSlide key={slide.id}>
+                <picture>
+                  <source media="(max-width: 1152px)" srcSet={slide.url_mobile} width="320" height="155"/>
+                  <img className="gallery__image" src={slide.url} alt={slide.alt} width="1240" height="600"/>
+                </picture>
               </SwiperSlide>
             ))}
           </Swiper>

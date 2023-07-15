@@ -8,16 +8,26 @@ import wheel from "./assets/img/catalog-images/wheel.png";
 import coverage from "./assets/img/catalog-images/coverage.png";
 import shin from "./assets/img/catalog-images/shin.png";
 import auto from "./assets/img/catalog-images/auto.png";
-import photo1 from "./assets/img/gallery/IMG_20230615_110936.jpg";
-import photo2 from "./assets/img/gallery/IMG_20230615_111006.jpg";
-import photo3 from "./assets/img/gallery/IMG_20230615_111025.jpg";
-import photo4 from "./assets/img/gallery/IMG_20230615_111134.jpg";
-import photo5 from "./assets/img/gallery/IMG_20230615_111315.jpg";
-import photo6 from "./assets/img/gallery/IMG_20230615_111659.jpg";
-import photo7 from "./assets/img/gallery/6xp7Y2DiTDI.jpg";
-import photo8 from "./assets/img/gallery/IMG_20230615_111508.jpg";
-import photo9 from "./assets/img/gallery/LHyStNhknvs.jpg";
-import photo10 from "./assets/img/gallery/xi8OPp_yrf0.jpg";
+import photo1 from "./assets/img/gallery/photo1.jpg";
+import photo2 from "./assets/img/gallery/photo2.jpg";
+import photo3 from "./assets/img/gallery/photo3.jpg";
+import photo4 from "./assets/img/gallery/photo4.jpg";
+import photo5 from "./assets/img/gallery/photo5.jpg";
+import photo6 from "./assets/img/gallery/photo6.jpg";
+import photo7 from "./assets/img/gallery/photo7.jpg";
+import photo8 from "./assets/img/gallery/photo8.jpg";
+import photo9 from "./assets/img/gallery/photo9.jpg";
+import photo10 from "./assets/img/gallery/photo10.jpg";
+import photo1Mobile from "./assets/img/gallery/mobile/photo1-mobile.jpg";
+import photo2Mobile from "./assets/img/gallery/mobile/photo2-mobile.jpg";
+import photo3Mobile from "./assets/img/gallery/mobile/photo3-mobile.jpg";
+import photo4Mobile from "./assets/img/gallery/mobile/photo4-mobile.jpg";
+import photo5Mobile from "./assets/img/gallery/mobile/photo5-mobile.jpg";
+import photo6Mobile from "./assets/img/gallery/mobile/photo6-mobile.jpg";
+import photo7Mobile from "./assets/img/gallery/mobile/photo7-mobile.jpg";
+import photo8Mobile from "./assets/img/gallery/mobile/photo8-mobile.jpg";
+import photo9Mobile from "./assets/img/gallery/mobile/photo9-mobile.png";
+import photo10Mobile from "./assets/img/gallery/mobile/photo10-mobile.jpg";
 
 export const advantagesList = [
     'Качественное исполнение работ',
@@ -128,6 +138,67 @@ export const contactsList = [
   }
 ];
 
-export const galleryList = [photo1, photo2, photo3, photo4, photo5, photo6, photo7, photo8, photo9, photo10];
+export const galleryList = [
+  {
+    id: 1,
+    url: photo1,
+    alt: 'Развал-схождение',
+    url_mobile: photo1Mobile
+  },
+  {
+    id: 2,
+    url: photo2,
+    alt: 'Автоподъемники',
+    url_mobile: photo2Mobile
+  },
+  {
+    id: 3,
+    url: photo3,
+    alt: 'Land Rover, обработка защитным покрытием line-x',
+    url_mobile: photo3Mobile
+  },
+  {
+    id: 4,
+    url: photo4,
+    alt: 'Участок мехобработки',
+    url_mobile: photo4Mobile
+  },
+  {
+    id: 5,
+    url: photo5,
+    alt: 'Ремонт автобуса',
+    url_mobile: photo5Mobile
+  },
+  {
+    id: 6,
+    url: photo6,
+    alt: 'Toyota Mega Cruiser',
+    url_mobile: photo6Mobile
+  },
+  {
+    id: 7,
+    url: photo7,
+    alt: 'Автомобильный эвакуато8',
+    url_mobile: photo7Mobile
+  },
+  {
+    id: 8,
+    url: photo8,
+    alt: 'Процесс шлифовки перед нанесением защитного покрытия Line-X',
+    url_mobile: photo8Mobile
+  },
+  {
+    id: 9,
+    url: photo9,
+    alt: 'Обработка кузова Toyota Tundra защитным покрытием Line-X',
+    url_mobile: photo9Mobile
+  },
+  {
+    id: 10,
+    url: photo10,
+    alt: 'Процесс частичного демонтажа авто перед обработкой защитным покрытием отдельных деталей',
+    url_mobile: photo10Mobile
+  },
+  ];
 
 export const urlMap = 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A918c38d381c35337998aac1e04dc9c7b0dbd42ca290acd629ba2bd55d2ab175a&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true';

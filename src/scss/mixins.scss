@@ -25,17 +25,17 @@
 
 @mixin section-title ($color) {
   position: relative;
-  margin: 70px auto 0;
+  margin: 50px auto 0;
   display: flex;
   color: $color;
   font-size: 40px;
   font-family: $PT-Sans-Caption;
   font-weight: bold;
   @media (max-width: $desktop-width) {
-    margin: 40px auto 0;
+    margin: 20px auto 0;
     padding-bottom: 5px;
     border-bottom: 2px solid ($color);
-    font-size: 30px;
+    font-size: 25px;
   }
   &::before {
     position: absolute;
@@ -67,7 +67,7 @@
 
 @mixin slideRight () {
   transform: translateX(-150%);
-  animation: ani 1s forwards;
+  animation: ani 1.5s forwards;
 }
 
 @mixin sliderButton () {
@@ -77,5 +77,9 @@
   }
   &::after {
     font-size: 150px !important;
+
+    @media (max-width: $desktop-width) {
+      font-size: 50px !important;
+    }
   }
 }

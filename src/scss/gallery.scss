@@ -1,21 +1,21 @@
 .gallery {
-  min-height: 110vh;
   background: $background-color;
   z-index: 1;
-
-  @media (max-width: $desktop-width) {
-    min-height: 400px;
-  }
 }
 .gallery__wrapper {
   @include make-center;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
 .gallery__title {
   @include section-title($bisque-color);
   justify-self: center;
+  margin-top: 30px;
+  @media (max-width: $desktop-width) {
+    margin-top: 20px;
+  }
 }
 
 .gallery__container {
@@ -23,41 +23,47 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 600px;
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 
   @media (max-width: $desktop-width) {
+    margin-bottom: 30px;
     justify-content: center;
     box-sizing: border-box;
-    min-width: 320px;
-    height: 200px;
-  }
-}
-
-.gallery__image {
-  @include size(1000px,  500px);
-  box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.25);
-  @media (max-width: $desktop-width) {
-    @include size(250px, 130px);
+    width: 320px;
   }
 }
 
 .swiper-button-prev {
   @include sliderButton();
   left: 50px !important;
+  @media (max-width: $desktop-width) {
+    left: 10px !important;
+  }
 }
 
 .swiper-button-next {
   @include sliderButton();
   right: 50px !important;
+
+  @media (max-width: $desktop-width) {
+    right: 10px !important;
+  }
 }
 
 .swiper-pagination-bullet {
   width: 20px !important;
   height: 20px !important;
   background-color: $bisque-color !important;
+  @media (max-width: $desktop-width) {
+    width: 10px !important;
+    height: 10px !important;
+  }
 }
 
 .swiper-pagination {
   bottom: 20px !important;
+  @media (max-width: $desktop-width) {
+    bottom: 5px !important;
+  }
 }
