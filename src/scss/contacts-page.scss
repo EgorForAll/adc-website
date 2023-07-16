@@ -144,7 +144,6 @@
   @include size (50%, 800px);
   margin-top: 50px;
   border-radius: 30px;
-  box-shadow: 2px 2px 10px 0 $background-color;
   @media (max-width: $desktop-width) {
     height: 350px;
     width: 100%;

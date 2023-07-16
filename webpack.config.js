@@ -27,6 +27,9 @@ module.exports = {
   mode,
   target,
   plugins,
+  resolve: {
+    extensions: ['.ts', '.js'],
+  },
   devtool: 'source-map',
   entry: './src/index.js',
   devServer: {

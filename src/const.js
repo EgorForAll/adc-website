@@ -1,14 +1,8 @@
 import director from "./assets/img/team/director.jpg";
+import emtyAvatar from "./assets/img/team/emprty-avatar.svg";
 import fedin from "./assets/img/team/fedin.jpg";
 import borisov from "./assets/img/team/borisov.jpg";
 import misha from "./assets/img/team/misha.jpg";
-import engine from "./assets/img/catalog-images/engine.png";
-import box from "./assets/img/catalog-images/box.png";
-import chassis from "./assets/img/catalog-images/chassis.png";
-import wheel from "./assets/img/catalog-images/wheel.png";
-import coverage from "./assets/img/catalog-images/coverage.png";
-import shin from "./assets/img/catalog-images/shin.png";
-import auto from "./assets/img/catalog-images/auto.png";
 import photo1 from "./assets/img/gallery/photo1.jpg";
 import photo2 from "./assets/img/gallery/photo2.jpg";
 import photo3 from "./assets/img/gallery/photo3.jpg";
@@ -19,6 +13,7 @@ import photo7 from "./assets/img/gallery/photo7.jpg";
 import photo8 from "./assets/img/gallery/photo8.jpg";
 import photo9 from "./assets/img/gallery/photo9.jpg";
 import photo10 from "./assets/img/gallery/photo10.jpg";
+import photo11 from "./assets/img/gallery/photo11.jpg";
 import photo1Mobile from "./assets/img/gallery/mobile/photo1-mobile.jpg";
 import photo2Mobile from "./assets/img/gallery/mobile/photo2-mobile.jpg";
 import photo3Mobile from "./assets/img/gallery/mobile/photo3-mobile.jpg";
@@ -29,6 +24,7 @@ import photo7Mobile from "./assets/img/gallery/mobile/photo7-mobile.jpg";
 import photo8Mobile from "./assets/img/gallery/mobile/photo8-mobile.jpg";
 import photo9Mobile from "./assets/img/gallery/mobile/photo9-mobile.png";
 import photo10Mobile from "./assets/img/gallery/mobile/photo10-mobile.jpg";
+import photo11Mobile from "./assets/img/gallery/mobile/photo11-mobile.jpg";
 
 export const advantagesList = [
     'Качественное исполнение работ',
@@ -52,7 +48,7 @@ export const teamList = [
       id: 1,
       name: 'Куделин Юрий Викторович',
       position: 'Технический директор',
-      avatar: director,
+      avatar: emtyAvatar,
       telephone: '+79081538554'
     },
     {
@@ -66,7 +62,7 @@ export const teamList = [
       id: 3,
       name: 'Гурылев Александр Андреевич',
       position: 'Мастер СТО',
-      avatar: director
+      avatar: emtyAvatar
     },
     {
       id: 4,
@@ -88,43 +84,43 @@ export const catalogList = [
     id: 0,
     name: 'Ремонт двигателя',
     description: 'Ремонт двигателей отечественнного и импортного производства. Диганостика, демонтаж и чистка узлов ДВС, мойка двигателя, измерение геометрии деталей, дефектовка коленчатого вала, устранение сколов, задиров, замена втулок, клапонов и т.д.',
-    image: engine
+    image: 'https://i.postimg.cc/Y9chs8pJ/engine.png'
   },
   {
     id: 1,
     name: 'Ремонт МКПП',
     description: 'Снятие и разборка коробки передач с автомобиля, контроль и замена изношенных деталей, испытание коробки передач после ремонта, установка коробки обратно в автомобиль, замена масла.',
-    image: box
+    image: 'https://i.postimg.cc/fT5SRxK9/box.png'
   },
   {
     id: 2,
     name: 'Ремонт ходовой части',
     description: 'Замена деталей подвески, замена стойки и втулки стабилизатора, замена верхних и нижних шаровых пор, регулировка подшипников, замена амортизаторов, регулировка ручного тормоза.',
-    image: chassis
+    image: 'https://i.postimg.cc/2S6bbVcX/chassis.png'
   },
   {
     id: 3,
     name: 'Развал-схождение',
     description: 'Регулировка углов положения колес (развал-схождение) согласно конструкции подвески.',
-    image: wheel
+    image: 'https://i.postimg.cc/jjnDcBrH/wheel.png'
   },
   {
     id: 4,
     name: 'Обработка авто защитным составом',
     description: 'Специальное покрытие для долгосрочной защиты кузова автомобиля, яхты, лодки, которое защищает поверхость от механических повреждений, внешних воздейтсвий и коррозии. Кузов вашего транспорта может быть любого цвета. Цвет защитного покрытия подбирается по запросу клиента.',
-    image: coverage
+    image: 'https://i.postimg.cc/QChVXtKm/coverage.png'
   },
   {
     id: 5,
     name: 'Шиномонтаж',
     description: 'Шиномонтаж легковых и грузовых автомобилей, балансировка колёс',
-    image: shin
+    image: 'https://i.postimg.cc/QtpHG5CV/shin.png'
   },
   {
     id: 6,
     name: 'Технический осмотр',
     description: 'Проведение технического осмотра транспортного средства в соответствии с федеральным законом 170-ФЗ "О техничском осмотре трансопртных средств".',
-    image: auto
+    image: 'https://i.postimg.cc/05YJLgKZ/auto.png'
   }
 ];
 
@@ -213,6 +209,13 @@ export const galleryList = [
     alt: 'Процесс частичного демонтажа авто перед обработкой защитным покрытием отдельных деталей',
     url_mobile: photo10Mobile
   },
+  {
+    id: 10,
+    url: photo11,
+    alt: 'Фото ремонтного цеха',
+    url_mobile: photo11Mobile
+  },
   ];
 
 export const urlMap = 'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A918c38d381c35337998aac1e04dc9c7b0dbd42ca290acd629ba2bd55d2ab175a&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true';
+
