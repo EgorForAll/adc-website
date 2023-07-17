@@ -1,16 +1,14 @@
 .modal-window {
-  position: relative;
   position: fixed;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   top: 50%;
   left: 50%;
-  margin-top: -370px;
-  margin-left: -250px;
   padding: 20px 50px;
+  margin-top: -300px;
+  margin-left: -250px;
   width: 500px;
-  min-height: 500px;
   background-color: $background-color;
   border: 10px solid #363636;
   border-radius: 30px;
@@ -46,7 +44,7 @@
   margin: 0;
   margin-bottom: 10px;
   @media (max-width: $desktop-width) {
-    font-size: 21px;
+    font-size: 18px;
   }
 }
 
@@ -117,12 +115,6 @@
   &--time {
     @extend .modal-window__input;
     margin-left: 10px;
-  }
-
-  &--textarea {
-    @extend .modal-window__input;
-    min-height: 100px;
-    resize: vertical;
   }
 }
 

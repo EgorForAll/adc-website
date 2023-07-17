@@ -3,6 +3,13 @@ import emtyAvatar from "./assets/img/team/emprty-avatar.svg";
 import fedin from "./assets/img/team/fedin.jpg";
 import borisov from "./assets/img/team/borisov.jpg";
 import misha from "./assets/img/team/misha.jpg";
+import engine from "./assets/img/catalog-images/engine.png";
+import box from "./assets/img/catalog-images/box.png";
+import chassis from "./assets/img/catalog-images/chassis.png";
+import coverage from "./assets/img/catalog-images/coverage.png";
+import auto from "./assets/img/catalog-images/auto.png";
+import shin from "./assets/img/catalog-images/shin.png";
+import wheel from "./assets/img/catalog-images/wheel.png";
 import photo1 from "./assets/img/gallery/photo1.jpg";
 import photo2 from "./assets/img/gallery/photo2.jpg";
 import photo3 from "./assets/img/gallery/photo3.jpg";
@@ -84,43 +91,43 @@ export const catalogList = [
     id: 0,
     name: 'Ремонт двигателя',
     description: 'Ремонт двигателей отечественнного и импортного производства. Диганостика, демонтаж и чистка узлов ДВС, мойка двигателя, измерение геометрии деталей, дефектовка коленчатого вала, устранение сколов, задиров, замена втулок, клапонов и т.д.',
-    image: 'https://i.postimg.cc/Y9chs8pJ/engine.png'
+    image: engine
   },
   {
     id: 1,
     name: 'Ремонт МКПП',
     description: 'Снятие и разборка коробки передач с автомобиля, контроль и замена изношенных деталей, испытание коробки передач после ремонта, установка коробки обратно в автомобиль, замена масла.',
-    image: 'https://i.postimg.cc/fT5SRxK9/box.png'
+    image: box
   },
   {
     id: 2,
     name: 'Ремонт ходовой части',
     description: 'Замена деталей подвески, замена стойки и втулки стабилизатора, замена верхних и нижних шаровых пор, регулировка подшипников, замена амортизаторов, регулировка ручного тормоза.',
-    image: 'https://i.postimg.cc/2S6bbVcX/chassis.png'
+    image: chassis
   },
   {
     id: 3,
     name: 'Развал-схождение',
     description: 'Регулировка углов положения колес (развал-схождение) согласно конструкции подвески.',
-    image: 'https://i.postimg.cc/jjnDcBrH/wheel.png'
+    image: wheel
   },
   {
     id: 4,
     name: 'Обработка авто защитным составом',
     description: 'Специальное покрытие для долгосрочной защиты кузова автомобиля, яхты, лодки, которое защищает поверхость от механических повреждений, внешних воздейтсвий и коррозии. Кузов вашего транспорта может быть любого цвета. Цвет защитного покрытия подбирается по запросу клиента.',
-    image: 'https://i.postimg.cc/QChVXtKm/coverage.png'
+    image: coverage
   },
   {
     id: 5,
     name: 'Шиномонтаж',
     description: 'Шиномонтаж легковых и грузовых автомобилей, балансировка колёс',
-    image: 'https://i.postimg.cc/QtpHG5CV/shin.png'
+    image: shin
   },
   {
     id: 6,
     name: 'Технический осмотр',
     description: 'Проведение технического осмотра транспортного средства в соответствии с федеральным законом 170-ФЗ "О техничском осмотре трансопртных средств".',
-    image: 'https://i.postimg.cc/05YJLgKZ/auto.png'
+    image: auto
   }
 ];
 

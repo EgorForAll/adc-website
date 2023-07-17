@@ -13,10 +13,6 @@
 .catalog__title {
   @include section-title($bisque-color);
   margin-bottom: 70px;
-
-  @media (max-width: $desktop-width) {
-    margin-top: 100px;
-  }
 }
 
 .catalog__services-container {

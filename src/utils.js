@@ -2,7 +2,7 @@ export const isMobileScreen = () => window.screen.width < 1152 ? true : false;
 
 const emailCheck = (input) => /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/ .test(input.value);
 
-const nameCheck = (input) => /^[a-z]+$/i.test(input.value) && input.value.length >= 2;
+const nameCheck = (input) => /^[а-яА-Я]+$/i.test(input.value);
 
 export const loaderTemplate = () => `<span class="loader"></span>`;
 
@@ -13,6 +13,7 @@ export const formValidate = (form, phoneMask) => {
   const nameInput = form.querySelector('.name');
   const emailInput = form.querySelector('.email');
   const phoneInput = form.querySelector('.phone');
+  const commentInput = form.querySelector('.comment');
   const checkboxInput = form.querySelector('#checkbox');
   if (!nameCheck(nameInput)) {
     nameInput.classList.add('error');
@@ -33,18 +34,23 @@ export const formValidate = (form, phoneMask) => {
   return errors;
 }
 
-export async function formSend  (form, formData) {
-  let response = await fetch('sendmail.php', {
-    method: 'POST',
-    body: formData
-  });
-  if (response.ok) {
-    let result = await response.json();
-    alert(result.message);
-    form.reset();
-  } else {
-    alert('Ошибка');
+export const formSend = (thisForm) => {
+    let formData = new FormData(thisForm);
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          console.log('Отправлено');
+        }
+      }
     }
+
+    xhr.open('POST', 'mail.php', true);
+    xhr.send(formData);
+
+    thisForm.reset();
 }
 
 

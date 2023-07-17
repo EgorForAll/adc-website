@@ -1,8 +1,7 @@
 .page-header {
-  width: 100%;
   background-color: $background-color;
   @media (max-width: $desktop-width) {
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     z-index: 5;
@@ -37,6 +36,7 @@
 
 .header__button {
   cursor: pointer;
+  display: none;
   position: relative;
   margin-right: 20px;
   width: 30px;
@@ -49,6 +49,8 @@
 
   &::before {
     display: block;
+    margin-right: 0;
+    box-sizing: border-box;
     position: absolute;
     content: '';
     width: 100%;
@@ -57,9 +59,8 @@
     top: 49%;
     background-color: $bisque-color;
   }
-
-  @media (min-width: $desktop-width) {
-    display: none;
+  @media (max-width: $desktop-width) {
+    display: inline-block;
   }
 }
 

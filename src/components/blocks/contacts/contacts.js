@@ -11,14 +11,17 @@ const Contacts = () => {
         <h2 className="contacts__title">Как нас найти</h2>
         <div className="contacts__container">
           <div className="contacts__address">
-            <h3 className="contacts__company">ООО "АДС"</h3>
+            <h3 className="contacts__address-subtitle">Физический адрес</h3>
             <span className="contacts__address-text">
-              Нижегородская область, Городецкий район, г. Заволжье, ул. Баумана 1а
+              Нижегородская область, Городецкий район, г. Заволжье, ул. Баумана, 1а
             </span>
-            <a className="contacts__link" href="tel:88316121737"><span className="contacts__telephone">ТЕЛ: 8-(831)-612-17-37</span></a>
-            <a className="contacts__link" href="tel:88316121728"><span className="contacts__telephone">8-(831)-612-17-28</span></a>
-            <span className="contacts__time-title">Время работы</span>
-            <span className="contacts__time">пн - пт 8:00 - 17:00</span>
+            <h3 className="contacts__address-subtitle ">Tелефоны</h3>
+            <div className="contacts__link-wrapper">
+              <a className="contacts__link" href="tel:88316121737"><span className="contacts__address-text telephone">8-(831)-612-17-37</span></a>
+              <a className="contacts__link" href="tel:88316121728"><span className="contacts__address-text telephone">8-(831)-612-17-28</span></a>
+            </div>
+            <h3 className="contacts__address-subtitle ">Время работы</h3>
+            <span className="contacts__address-text">пн - пт 8:00 - 17:00</span>
           </div>
           <div className="contacts__map" ref={mainMapRef}>
           </div>
