@@ -1,0 +1,18 @@
+.success-message {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #81b481;
+  border-radius: 10px;
+  margin-top: 15px
+};
+
+.succes-message__text {
+  color: $background-color;
+  font-family: $PT-Sans-Caption;
+  font-size: 15px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $background-color;
+}

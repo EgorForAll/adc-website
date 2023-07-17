@@ -4,6 +4,9 @@ const emailCheck = (input) => /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+
 
 const nameCheck = (input) => /^[а-яА-Я]+$/i.test(input.value);
 
+export const successTemplate = () => `<div class="success-message"> <span class="succes-message__text">Ваша заявка успешно доставена. Наш менеджер свяжется с вами в ближайшее время</span>
+  </div>`
+
 export const loaderTemplate = () => `<span class="loader"></span>`;
 
 export const overlayTemplate = () => `<div class="overlay"></div>`;
@@ -13,7 +16,6 @@ export const formValidate = (form, phoneMask) => {
   const nameInput = form.querySelector('.name');
   const emailInput = form.querySelector('.email');
   const phoneInput = form.querySelector('.phone');
-  const commentInput = form.querySelector('.comment');
   const checkboxInput = form.querySelector('#checkbox');
   if (!nameCheck(nameInput)) {
     nameInput.classList.add('error');
@@ -34,23 +36,6 @@ export const formValidate = (form, phoneMask) => {
   return errors;
 }
 
-export const formSend = (thisForm) => {
-    let formData = new FormData(thisForm);
-
-    let xhr = new XMLHttpRequest();
-
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState === 4) {
-        if (xhr.status === 200) {
-          console.log('Отправлено');
-        }
-      }
-    }
-
-    xhr.open('POST', 'mail.php', true);
-    xhr.send(formData);
-
-    thisForm.reset();
-}
-
-
+export const removeNode = (parent, node) => setTimeout(() => {
+  parent.removeChild(node);
+}, 1000);

@@ -1,14 +1,8 @@
 import {createAction} from '@reduxjs/toolkit';
 
 export const ActionType = {
-  SELECT_SERVICE: 'select the service'
-};
-
-export const ActionCreator = {
-  selectService: (service) => ({
-    type: ActionType.SELECT_SERVICE,
-    payload: service
-  }),
+  SELECT_SERVICE: 'select the service',
+  OPEN_MODAL_WINDOW: 'open modal window'
 };
 
 export const selectService = createAction(ActionType.SELECT_SERVICE, (service) => {
@@ -16,3 +10,5 @@ export const selectService = createAction(ActionType.SELECT_SERVICE, (service) =
     payload: service
   }
 });
+
+export const openModalWindow = createAction(ActionType.OPEN_MODAL_WINDOW);
