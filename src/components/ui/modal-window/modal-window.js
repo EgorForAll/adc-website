@@ -40,7 +40,7 @@ const ModalWindow = ({parent, root, service}) => {
         <label htmlFor="email" className="modal__window-subtitle">Email:</label>
         <input id="email" name="email" className="modal-window__input email" type="email"/>
         <label className="modal__window-subtitle" htmlFor="type">Выберите услугу</label>
-        <select defaultValue={service} className="modal-window__input"  id="type">
+        <select name="services" className="modal-window__input"  id="type">
           <option value={'defualt'}>-</option>
           {catalogList.map((item) =>
             <option
@@ -53,8 +53,8 @@ const ModalWindow = ({parent, root, service}) => {
         </select>
         <div className="modal-window__time-wrapper">
           <label className="modal__window-subtitle" htmlFor="date">Выберите удобное для вас время</label>
-          <input id="date" className="modal-window__input date" name="date" type="date"/>
-          <input id="date" className="modal-window__input--time" name="time" type="time"/>
+          <input id="date" className="modal-window__input date" name="day" type="date"/>
+          <input className="modal-window__input--time" name="time" type="time"/>
         </div>
         <div className="modal-window__checkbox-wrapper">
           <input id="checkbox" className="modal-window__input--checkbox" type="checkbox"/>
