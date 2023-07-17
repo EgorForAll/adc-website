@@ -6,7 +6,7 @@
   top: 50%;
   left: 50%;
   padding: 20px 50px;
-  margin-top: -300px;
+  margin-top: -370px;
   margin-left: -250px;
   width: 500px;
   background-color: $background-color;
@@ -86,10 +86,22 @@
 .modal__window-subtitle {
   font-family: $PT-Sans-Caption;
   color: $bisque-color;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
 
   @media (max-width: $desktop-width) {
+    font-size: 15px;
+  }
+
+  &--services {
+    @extend .modal__window-subtitle;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  &--checkbox {
+    @extend .modal__window-subtitle;
+    color: #fff;
+    margin: 0;
     font-size: 15px;
   }
 }
@@ -115,6 +127,12 @@
   &--time {
     @extend .modal-window__input;
     margin-left: 10px;
+  }
+}
+
+.date {
+  @media (max-width: $desktop-width) {
+    margin-left: 5px;
   }
 }
 
@@ -174,4 +192,11 @@
   color: #fff;
   font-size: 13px;
   font-family: $PT-Sans-Caption;
+}
+
+.modal-window__services-wrapper {
+  display: flex;
+  height: 20px;
+  margin-bottom: 5px;
+  align-items: center;
 }
