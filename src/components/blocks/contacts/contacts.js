@@ -1,10 +1,16 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import useScript from "../../custom-hook/use-script/use-script";
 import { urlMap } from "../../../const";
+import { observerOpacity } from "../../../utils";
 
 const Contacts = () => {
   const mainMapRef = useRef();
   useScript(urlMap, mainMapRef);
+
+  useEffect(() => {
+    observerOpacity.observe(document.querySelector('.contacts__container'));
+  }, []);
+
   return (
     <section className="contacts">
       <div className="contacts__wrapper">

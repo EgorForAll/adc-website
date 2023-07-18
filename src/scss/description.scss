@@ -33,7 +33,6 @@ figure {
   align-items: center;
   background-color: $bisque-color;
   border-radius: 30px;
-  @include slideRight();
   @media (max-width: $desktop-width) {
     background-color: $background-color;
     border: none;

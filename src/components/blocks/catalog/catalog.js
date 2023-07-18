@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { catalogList } from "../../../const";
 import ProductCard from "../../ui/product-card/product-card";
+import { observerSlide } from "../../../utils";
 
 const Catalog = () => {
+
+  useEffect(() => {
+    observerSlide.observe(document.querySelector('.catalog__services-container'));
+  }, []);
+
   return (
     <section className="catalog">
       <div className="catalog__wrapper">

@@ -1,7 +1,14 @@
 import React from "react";
 import DescImg from "../../../assets/img/adc-main.jpg";
+import { useEffect } from "react";
+import { observerOpacity } from "../../../utils";
 
 const Description = () => {
+
+  useEffect(() => {
+    observerOpacity.observe(document.querySelector('.description__wrapper'));
+  }, []);
+
     return (
         <section className="page-description">
             <h2 className="visually-hidden">О нас</h2>

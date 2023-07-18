@@ -1,9 +1,17 @@
-import React from "react"
+import React from "react";
 import OrderButton from "../../hoc/order-button/order-button";
 import IntroButton from "../../ui/intro-button/intro-button";
+import { useEffect } from "react";
+import { observerSlide, observerOpacity } from "../../../utils";
 
 const Intro = () => {
   const OrderButtonIntro = OrderButton(IntroButton);
+
+  useEffect(() => {
+    observerSlide.observe(document.querySelector('.title-container'));
+    observerSlide.observe(document.querySelector('.intro__button'));
+    observerOpacity.observe(document.querySelector('.intro'));
+  })
 
   return (
     <section className="intro">

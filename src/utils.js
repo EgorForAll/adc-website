@@ -39,3 +39,20 @@ export const formValidate = (form, phoneMask) => {
 export const removeNode = (parent, node) => setTimeout(() => {
   parent.removeChild(node);
 }, 1000);
+
+
+export const observerSlide = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('slight-right');
+    }
+  });
+});
+
+export const observerOpacity = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('intro-ani');
+    }
+  });
+});

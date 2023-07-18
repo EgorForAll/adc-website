@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { teamList } from "../../../const";
+import { observerOpacity } from "../../../utils";
 
 const Team = () => {
+
+  useEffect(() => {
+    observerOpacity.observe(document.querySelector('.team__list'))
+  }, []);
+
     return (
         <section className="team">
             <div className="team__wrapper">

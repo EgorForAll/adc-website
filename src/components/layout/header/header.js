@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import Logo from "../../../assets/img/logo-header.svg";
 import LogoDesk from "../../../assets/img/logo-header-desktop.svg";
-import { isMobileScreen } from "../../../utils";
+import { isMobileScreen} from "../../../utils";
 
 const Header = () => {
   const [isOpened, setStatus] = useState(false);

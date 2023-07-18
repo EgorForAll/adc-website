@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, EffectCube } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { galleryList } from "../../../const";
+import { observerO, observerOpacity } from "../../../utils";
 
 const Gallery = () => {
+
+  useEffect(() => {
+    observerOpacity.observe(document.querySelector('.gallery__container'));
+  });
 
   return (
     <section className="gallery">
