@@ -5,7 +5,10 @@ import { observerSlide } from "../../../utils";
 const Adavantages = () => {
 
   useEffect(() => {
-    observerSlide.observe(document.querySelector('.advantages__list'))
+    const items = document.querySelectorAll('.advantages__item');
+    for (let item of items) {
+      observerSlide.observe(item);
+    }
   });
 
     return (

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { catalogList } from "../../../const";
 import ProductCard from "../../ui/product-card/product-card";
 import { observerSlide } from "../../../utils";
@@ -9,10 +9,6 @@ import { connect } from "react-redux";
 const Catalog = ({service}) => {
   const [isOpened, setOpen] = useState(false);
   const [loader, setLoader] = useState(false);
-
-  useEffect(() => {
-    observerSlide.observe(document.querySelector('.catalog__services-container'));
-  }, []);
 
   return (
     <section className="catalog">

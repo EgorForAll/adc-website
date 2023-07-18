@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import OrderButton from "../../hoc/order-button/order-button";
 import CatalogButton from "../catalog-button/catalog-button";
 import { useDispatch } from "react-redux";
+import { observerSlide } from "../../../utils";
 import { selectService } from "../../../store/actions";
 
 const ProductCard = ({product, isOpened, setOpen}) => {
   const dispatch = useDispatch();
   const onSelectService = (service) => dispatch(selectService(service));
   const OrderButtonCard = OrderButton(CatalogButton, isOpened, setOpen, onSelectService, product.name);
+
+  useEffect(() => {
+    const items = document.querySelectorAll('.catalog__card');
+    for (let item of items) {
+      observerSlide.observe(item);
+    }
+  }, []);
 
   return (
     <>
