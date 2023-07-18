@@ -16,21 +16,34 @@ async function formSend(evt, form, phoneMask, modalWindow) {
     });
     if (response.ok) {
       form.reset();
+      const errorInputs = modalWindow.querySelectorAll('.error');
+      if (errorInputs) {
+        for (let input of errorInputs) {
+          input.classList.remove('error')
+        }
+      }
       const loader = modalWindow.querySelector('.loader');
       const overlay = modalWindow.querySelector('.overlay');
       modalWindow.removeChild(loader);
       modalWindow.removeChild(overlay);
       alert('Ваша заявка успешно доставлена. Наш менеджер свяжется с вами в ближайшее время');
-  } else {
-    alert('Заполинте обязательные поля')
+    } else {
+      alert('Не удается установить соединение. Поробуйте еще раз');
+    }} else {
+      alert('Заполнити обязательные поля формы')
+    }
   }
-}}
 
 const ModalWindow = ({parent, root, service}) => {
   const selected = (item) => service === item.name ? 'selected' : null;
   const formRef = useRef();
   const modalRef = useRef();
   const phoneRef = useRef();
+  let today = new Date();
+  let day = today.getDate();
+  let month = today.getMonth() + 1;
+  let year = today.getFullYear();
+
 
   const deleteModal = () => {
     root.removeChild(parent);
@@ -80,8 +93,8 @@ const ModalWindow = ({parent, root, service}) => {
         <div className="modal-window__time-wrapper">
           <label className="modal__window-subtitle date-subtitle" htmlFor="date">Выберите удобное для вас время</label>
           <div className="modal-window__time-input-wrapper">
-            <input id="date" className="modal-window__input--date" name="day" type="date"/>
-            <input className="modal-window__input" name="time" type="time"/>
+            <input id="date" className="modal-window__input--date" min={`${year}-${month > 10 ? month : `0${month}` }-${day}`} name="day" type="date"/>
+            <input id="time" className="modal-window__input" name="time" type="time"/>
           </div>
         </div>
         <div className="modal-window__checkbox-wrapper">
