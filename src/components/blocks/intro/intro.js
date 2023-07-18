@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import OrderButton from "../../hoc/order-button/order-button";
 import IntroButton from "../../ui/intro-button/intro-button";
+import ModalWindow from "../../ui/modal-window/modal-window";
 import { useEffect } from "react";
 import { observerSlide, observerOpacity } from "../../../utils";
+import Loader from "../../ui/loader/loader";
 
 const Intro = () => {
-  const OrderButtonIntro = OrderButton(IntroButton);
-
+  const [isOpened, setOpen] = useState(false);
+  const [loader, setLoader] = useState(false);
+  const OrderButtonIntro = OrderButton(IntroButton, isOpened, setOpen);
   useEffect(() => {
     observerSlide.observe(document.querySelector('.title-container'));
-    observerSlide.observe(document.querySelector('.intro__button'));
     observerOpacity.observe(document.querySelector('.intro'));
   })
 
@@ -23,7 +25,9 @@ const Intro = () => {
           </p>
         </div>
         <OrderButtonIntro />
+        {isOpened ? <ModalWindow setOpen={setOpen} setLoader={setLoader}/> : null}
       </div>
+      {loader ? <Loader /> : null}
     </section>
   )
 }

@@ -1,33 +1,22 @@
 import React from "react";
-import ReactDOM from 'react-dom';
-import ModalWindow from "../../ui/modal-window/modal-window";
-
-const createOverlay = () => {
-  const overlay =  document.createElement('div');
-  overlay.classList.add('overlay');
-  return overlay;
-}
 
 
-function OrderButton(WrappedComponent, service) {
+function OrderButton(WrappedComponent, isOpened, setOpen, click, service) {
   return class extends React.Component {
     constructor(props) {
       super(props);
-      this.overlay = createOverlay();
-      this.rootElement = document.querySelector('#root');
       this.onClickButton = this.onClickButton.bind(this);
       this.handleEsc = this.handleEsc.bind(this);
       this.state = {
-        service: service
+        isModalOpen: isOpened
       }
     }
 
     handleEsc(evt) {
       if (evt.key === 'Escape') {
-        if (this.rootElement.firstChild === this.overlay) {
-          this.rootElement.removeChild(this.overlay);
-        }
-        return;
+        document.querySelector('.overlay').classList.add('opacity-overlay');
+        document.querySelector('.modal-window').classList.add('modal-up');
+        setTimeout(() => setOpen(false), 1000);
       }
     }
 
@@ -40,16 +29,17 @@ function OrderButton(WrappedComponent, service) {
     }
 
     onClickButton() {
-      this.rootElement.insertAdjacentElement('afterbegin', this.overlay);
-      ReactDOM.render(
-        <ModalWindow parent={this.overlay} root={this.rootElement} service={this.state.service} />, this.overlay
-      )
+       if (click) {
+        click(service);
+       } ;
+      setOpen(true)
     }
 
     render() {
-      return <WrappedComponent onClick={this.onClickButton} selectedService={this.state.service} />;
+      return <WrappedComponent onClick={this.onClickButton} />;
     }
   };
 }
+
 
 export default OrderButton;

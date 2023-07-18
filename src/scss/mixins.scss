@@ -86,7 +86,7 @@
 
 @mixin slideTop() {
   transform: translateY(-150%);
-  animation: modal 1s forwards;
+  animation: modal-down 1s forwards;
 }
 
 @mixin new() {

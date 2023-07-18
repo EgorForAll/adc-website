@@ -1,16 +1,12 @@
 import {createReducer} from "@reduxjs/toolkit";
-import { selectService, openModalWindow } from "./actions";
+import { selectService } from "./actions";
 
 const initialState = {
-  selectedService: '',
-  modalWindow: false
+  selectedService: ''
 }
 
 export const rootReducer = createReducer(initialState, (builder) => {
   builder.addCase(selectService, (state, action) => {
-    state.selectedService = action.payload;
-  });
-  builder.addCase(openModalWindow, (state) => {
-    state.modalWindow = true;
+    state.selectedService = action.payload
   });
 });

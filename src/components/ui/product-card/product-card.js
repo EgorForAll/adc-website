@@ -1,10 +1,16 @@
 import React from "react";
 import OrderButton from "../../hoc/order-button/order-button";
 import CatalogButton from "../catalog-button/catalog-button";
+import { useDispatch } from "react-redux";
+import { selectService } from "../../../store/actions";
 
-const ProductCard = ({product}) => {
-  const OrderButtonCard = OrderButton(CatalogButton, product.name);
+const ProductCard = ({product, isOpened, setOpen}) => {
+  const dispatch = useDispatch();
+  const onSelectService = (service) => dispatch(selectService(service));
+  const OrderButtonCard = OrderButton(CatalogButton, isOpened, setOpen, onSelectService, product.name);
+
   return (
+    <>
     <li className="catalog__card">
       <div className="card__image-wrapper">
         <img src={product.image} alt="Изображение услуги" width="130px" height="130px" />
@@ -14,10 +20,12 @@ const ProductCard = ({product}) => {
         <span className="card__description-text">{product.description}</span>
       </div>
       <div className="card__button-wrapper">
-        <OrderButtonCard/>
+        <OrderButtonCard  onClick={() => onSelectService(product.name)}/>
       </div>
     </li>
+    </>
   )
 }
+
 
 export default ProductCard;

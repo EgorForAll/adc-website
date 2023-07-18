@@ -24,9 +24,6 @@
   }
 }
 
-.modal-window .overlay {
-  border-radius: 25px;
-}
 
 .modal-window__tab {
   display: flex;
@@ -77,6 +74,11 @@
     transform: rotate(-45deg);
   }
 }
+
+.modal-overlay {
+  background-color: #151313;
+}
+
 
 .modal-window__form {
   display: flex;
@@ -131,10 +133,9 @@
     outline: 4px solid #488047;
     border: none;
   }
-
-  &--date {
-    @extend .modal-window__input;
-  }
+}
+.input-overlay {
+  background-color: #5d5d5d;
 }
 
 
@@ -160,6 +161,10 @@
   &:active {
     top: 3px;
     box-shadow: none;
+  }
+
+  &:disabled {
+    background-color: #5a6359;
   }
 
   @media (max-width: $desktop-width) {

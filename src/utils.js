@@ -25,8 +25,6 @@ const isDateValid = (date) => {
 
 export const loaderTemplate = () => `<span class="loader"></span>`;
 
-export const overlayTemplate = () => `<div class="overlay"></div>`;
-
 export const formValidate = (form, phoneMask) => {
   let errors = 0;
   const nameInput = form.querySelector('.name');
