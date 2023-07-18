@@ -75,7 +75,7 @@ export const observerSlide = new IntersectionObserver(entries => {
 export const observerOpacity = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('intro-ani');
+      entry.target.classList.add('opacity-ani');
     }
   });
 });
