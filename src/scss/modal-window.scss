@@ -6,7 +6,7 @@
   top: 50%;
   left: 50%;
   padding: 20px 50px;
-  margin-top: -370px;
+  margin-top: -283px;
   margin-left: -250px;
   width: 500px;
   background-color: $background-color;
@@ -15,7 +15,7 @@
   @include slideTop();
 
   @media (max-width: $desktop-width) {
-    margin-top: -80px;
+    margin-top: -50px;
     margin-left: 0px;
     top: 15%;
     width: 100%;
@@ -83,11 +83,19 @@
   flex-direction: column;
 }
 
+.modal-window__input-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
 .modal__window-subtitle {
   font-family: $PT-Sans-Caption;
   color: $bisque-color;
   font-size: 20px;
   font-weight: 400;
+  margin-bottom: 10px;
 
   @media (max-width: $desktop-width) {
     font-size: 15px;
@@ -108,7 +116,7 @@
 
 .modal-window__input {
   border: 1px solid #363636;
-  margin: 10px 0;
+  margin: 0;
   padding: 5px 10px;
   box-sizing: border-box;
   background-color: #d8d7d7;
@@ -124,17 +132,11 @@
     border: none;
   }
 
-  &--time {
+  &--date {
     @extend .modal-window__input;
-    margin-left: 10px;
   }
 }
 
-.date {
-  @media (max-width: $desktop-width) {
-    margin-left: 5px;
-  }
-}
 
 .modal__window__button-submit {
   position: relative;
@@ -173,7 +175,7 @@
 .modal-window__checkbox-wrapper {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  margin-top: 15px;
 }
 
 .modal-window__input--checkbox {
@@ -185,7 +187,6 @@
 
 .checkbox-label {
   position: relative;
-  padding: 5px;
   display: inline-flex;
   border-radius: 10px;
   align-items: center;
@@ -199,4 +200,21 @@
   height: 20px;
   margin-bottom: 5px;
   align-items: center;
+}
+
+.modal-window__time-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.date-subtitle {
+  width: 100%;
+}
+
+.modal-window__time-input-wrapper {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  box-sizing: border-box;
 }

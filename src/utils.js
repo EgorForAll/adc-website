@@ -2,7 +2,7 @@ export const isMobileScreen = () => window.screen.width < 1152 ? true : false;
 
 const emailCheck = (input) => /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/ .test(input.value);
 
-const nameCheck = (input) => /^[а-яА-Я]+$/i.test(input.value);
+const nameCheck = (input) => /^[а-яА-ЯёЁa-zA-Z0-9]+$/.test(input.value);
 
 export const successTemplate = () => `<div class="success-message"> <span class="succes-message__text">Ваша заявка успешно доставена. Наш менеджер свяжется с вами в ближайшее время</span>
   </div>`
