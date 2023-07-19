@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { catalogList } from "../../../const";
-import ProductCard from "../../ui/product-card/product-card";
-import { observerSlide } from "../../../utils";
-import ModalWindow from "../../ui/modal-window/modal-window";
+import ProductCard from "../product-card/product-card";
+import ModalWindow from "../modal-window/modal-window";
 import Loader from "../../ui/loader/loader";
 import { connect } from "react-redux";
 

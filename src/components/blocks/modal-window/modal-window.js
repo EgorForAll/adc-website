@@ -60,7 +60,6 @@ const ModalWindow = ({setOpen, setLoader, service}) => {
   let year = today.getFullYear();
 
   useEffect(() => {
-
     formRef.current.addEventListener('submit', (evt) => formSend(evt, formRef.current, modalRef.current, setLoader, setSuccessMsg, setErrorMsg, successMsg, errorMsg));
   })
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom";
 import Logo from "../../../assets/img/logo-header.svg";
 import LogoDesk from "../../../assets/img/logo-header-desktop.svg";
@@ -12,9 +12,10 @@ const Header = () => {
     isMobileScreen() ? setScreen(true) :setScreen(false);
   })
 
-  const isMainPage = () => window.location.pathname.length === 1 ? 'header__link--active' : 'header__link';
-  const isCatalogPage = () => window.location.pathname.includes('/catalog') ?' header__link--active' : 'header__link';
-  const isContactsPage = () => window.location.pathname.includes('/contacts') ?' header__link--active' : 'header__link';
+  const isMainPage = useCallback(() => window.location.pathname.length === 1 ? 'header__link--active' : 'header__link', []);
+  const isCatalogPage = useCallback(() => window.location.pathname.includes('/catalog') ?' header__link--active' : 'header__link', []);
+  const isContactsPage = useCallback(() => window.location.pathname.includes('/contacts') ?' header__link--active' : 'header__link', []);
+
 
     return (
         <header className="page-header">

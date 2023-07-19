@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import OrderButton from "../../hoc/order-button/order-button";
-import CatalogButton from "../catalog-button/catalog-button";
+import CatalogButton from "../../ui/catalog-button/catalog-button";
 import { useDispatch } from "react-redux";
 import { observerSlide } from "../../../utils";
 import { selectService } from "../../../store/actions";

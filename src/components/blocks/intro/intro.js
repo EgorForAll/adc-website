@@ -1,7 +1,7 @@
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useState } from "react";
 import OrderButton from "../../hoc/order-button/order-button";
 import IntroButton from "../../ui/intro-button/intro-button";
-import ModalWindow from "../../ui/modal-window/modal-window";
+import ModalWindow from "../modal-window/modal-window";
 import { useEffect } from "react";
 import { observerSlide, observerOpacity } from "../../../utils";
 import Loader from "../../ui/loader/loader";
