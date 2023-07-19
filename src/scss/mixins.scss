@@ -65,6 +65,20 @@
     }
 }
 
+@mixin msgInModal ($bg-color, $color) {
+  margin-top: 10px;
+  border-radius: 10px;
+  padding:5px 10px;
+  text-align: justify;
+  font-family: $PT-Sans-Caption;
+  font-size: 15px;
+  color: $color;
+  line-height: 17px;
+  background-color: $bg-color;
+  opacity: 0;
+  animation: opacityAni 1s forwards;
+}
+
 @mixin sliderButton () {
   color: $bisque-color !important;
   &:hover {

@@ -6,6 +6,8 @@ const nameCheck = (input) => /^[а-яА-ЯёЁa-zA-Z0-9]+$/.test(input.value);
 
 const dateCheck = (input) => /[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])/.test(input.value);
 
+const telephoneCheck = (input) => /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/.test(input.value);
+
 const isDateValid = (date) => {
   let parts   = date.split("-");
   let day     = parseInt(parts[2], 10);
@@ -23,9 +25,7 @@ const isDateValid = (date) => {
   };
 }
 
-export const loaderTemplate = () => `<span class="loader"></span>`;
-
-export const formValidate = (form, phoneMask) => {
+export const formValidate = (form) => {
   let errors = 0;
   const nameInput = form.querySelector('.name');
   const emailInput = form.querySelector('.email');
@@ -41,7 +41,7 @@ export const formValidate = (form, phoneMask) => {
     emailInput.classList.add('error');
     errors++;
   }
-  if (!phoneMask.masked.isComplete) {
+  if (!telephoneCheck(phoneInput)) {
     phoneInput.classList.add('error');
     errors++;
   }

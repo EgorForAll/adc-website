@@ -1,13 +1,14 @@
-import React, { useEffect, useRef} from "react";
+import React, { useEffect, useRef, useState} from "react";
 import { catalogList } from "../../../const";
-import IMask from 'imask';
 import {formValidate} from "../../../utils";
 import { useDispatch } from "react-redux";
 import { selectService } from "../../../store/actions";
 
-async function formSend(evt, form, phoneMask, modalWindow, setLoader) {
+async function formSend(evt, form, modalWindow, setLoader, setSuccessMsg, setErrorMsg, successMsg, errorMsg) {
   evt.preventDefault();
-  let errors = formValidate(form, phoneMask);
+  successMsg ? setSuccessMsg(false) : null;
+  errorMsg ? setErrorMsg(false) : null;
+  let errors = formValidate(form);
   let formData = new FormData(form);
   const inputs = modalWindow.querySelectorAll('.modal-window__input');
   if (errors === 0) {
@@ -37,15 +38,17 @@ async function formSend(evt, form, phoneMask, modalWindow, setLoader) {
           input.classList.remove('error')
         }
       }
-      alert('Ваша заявка успешно доставлена. Наш менеджер свяжется с вами в ближайшее время');
+      successMsg ? null : setSuccessMsg(true);
     } else {
       alert('Не удается установить соединение. Поробуйте еще раз');
     }} else {
-      alert('Заполнити обязательные поля формы')
+      !errorMsg ? setErrorMsg(true) : null;
     }
   }
 
 const ModalWindow = ({setOpen, setLoader, service}) => {
+  const [successMsg, setSuccessMsg] = useState(false);
+  const [errorMsg, setErrorMsg] = useState(false);
   const formRef = useRef();
   const modalRef = useRef();
   const phoneRef = useRef();
@@ -57,16 +60,15 @@ const ModalWindow = ({setOpen, setLoader, service}) => {
   let year = today.getFullYear();
 
   useEffect(() => {
-    const phoneMask = new IMask(phoneRef.current, {
-      mask: "+{7}(000)000-00-00",
-    });
 
-    formRef.current.addEventListener('submit', (evt) => formSend(evt, formRef.current, phoneMask, modalRef.current, setLoader));
+    formRef.current.addEventListener('submit', (evt) => formSend(evt, formRef.current, modalRef.current, setLoader, setSuccessMsg, setErrorMsg, successMsg, errorMsg));
   })
 
   const closeModal = () => {
     document.querySelector('.overlay').classList.add('opacity-overlay');
     modalRef.current.classList.add('modal-up');
+    errorMsg ? setErrorMsg(false) : null;
+    successMsg ? setSuccessMsg(false) : null;
     setTimeout(() => setOpen(false), 1000);
   }
 
@@ -85,7 +87,7 @@ const ModalWindow = ({setOpen, setLoader, service}) => {
           </div>
           <div className="modal-window__input-wrapper">
             <label htmlFor="telephone" className="modal__window-subtitle">Телефон:</label>
-            <input id="telephone" name="telephone" className="modal-window__input phone" type="tel" ref={phoneRef}/>
+            <input id="telephone" placeholder="+7-(000)-000-00-00" name="telephone" className="modal-window__input phone" type="tel" ref={phoneRef}/>
           </div>
           <div className="modal-window__input-wrapper">
             <label htmlFor="email" className="modal__window-subtitle">Email:</label>
@@ -118,6 +120,12 @@ const ModalWindow = ({setOpen, setLoader, service}) => {
           </div>
           <button className="modal__window__button-submit" type="submit" >Отправить заявку</button>
         </form>
+        {successMsg ?
+          <span className="success-message">Ваша заявка успешно доставлена. Наш менеджер свяжется с вами в ближайшее время</span>
+            :  null}
+        {errorMsg ?
+          <span className="error-message">Правильно заполните обязательные поля формы и повторите попытку</span>
+            :  null}
       </div>
       </div>
     </>
