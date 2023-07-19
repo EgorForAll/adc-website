@@ -31,7 +31,7 @@ function OrderButton(WrappedComponent, isOpened, setOpen, click, service) {
     onClickButton() {
        if (click) {
         click(service);
-       } ;
+       }
       setOpen(true)
     }
 

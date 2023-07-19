@@ -22,7 +22,7 @@ const isDateValid = (date) => {
 
   if (day < 0 || day > monthLength[month - 1]) {
     return false;
-  };
+  }
 }
 
 export const formValidate = (form) => {
