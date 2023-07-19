@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 import SVG from 'react-inlinesvg';
-import Logo from "../../../assets/img/logo-header.svg";
-import LogoDesk from "../../../assets/img/logo-header-desktop.svg";
-import Vk from "../../../assets/img/vk.svg";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Logo from '../../../assets/img/logo-header.svg';
+import LogoDesk from '../../../assets/img/logo-header-desktop.svg';
+import Vk from '../../../assets/img/vk.svg';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 const Footer = () => {
   const openLink = () => window.location.replace('https://vk.com/adc52');
@@ -18,10 +18,8 @@ const Footer = () => {
         </a>
         <div className="footer__links">
           <span className="footer__text">Подписывайтесь на нас:</span>
-          <Link to={{ pathname: "https://vk.com/adc52" }} target="_blank" >
-            <SVG
-              src={Vk}
-            />
+          <Link to={{ pathname: 'https://vk.com/adc52' }} target="_blank">
+            <SVG src={Vk} />
           </Link>
         </div>
         <div className="footer__copyright-wrapper">
@@ -29,7 +27,6 @@ const Footer = () => {
         </div>
       </div>
     </footer>
-
   );
 };
 

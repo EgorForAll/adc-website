@@ -9,7 +9,7 @@
     "build": "webpack",
     "build-prod": "webpack --mode=production",
     "clean": "rd /s /q dist",
-    "eslint": "eslint .",
+    "eslint": "eslint --ext .js src/",
     "eslint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
@@ -59,6 +59,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "imask": "^7.1.2",
+    "prop-types": "^15.8.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-inlinesvg": "^3.0.2",

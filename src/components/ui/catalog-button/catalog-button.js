@@ -1,9 +1,16 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const CatalogButton = ({onClick}) => {
+const CatalogButton = ({ onClick }) => {
   return (
-    <button className="card__button" onClick={() => onClick()}>Записаться на услугу</button>
+    <button className="card__button" onClick={() => onClick()}>
+      Записаться на услугу
+    </button>
   );
 };
 
 export default CatalogButton;
+
+CatalogButton.propTypes = {
+  onClick: PropTypes.func
+};

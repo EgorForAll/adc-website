@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, EffectCube } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
-import { galleryList } from "../../../const";
-import { observerOpacity } from "../../../utils";
+import { galleryList } from '../../../const';
+import { observerOpacity } from '../../../utils';
 
 const Gallery = () => {
-
   useEffect(() => {
     observerOpacity.observe(document.querySelector('.gallery__container'));
   });
@@ -19,16 +18,26 @@ const Gallery = () => {
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
             spaceBetween={50}
-            effect={"coverflow"}
+            effect={'coverflow'}
             pagination={true}
             navigation
-            slidesPerView={1}
-            >
+            slidesPerView={1}>
             {galleryList.map((slide) => (
               <SwiperSlide key={slide.id}>
                 <picture>
-                  <source media="(max-width: 1152px)" srcSet={slide.url_mobile} width="320" height="155"/>
-                  <img className="gallery__image" src={slide.url} alt={slide.alt} width="1240" height="600"/>
+                  <source
+                    media="(max-width: 1152px)"
+                    srcSet={slide.url_mobile}
+                    width="320"
+                    height="155"
+                  />
+                  <img
+                    className="gallery__image"
+                    src={slide.url}
+                    alt={slide.alt}
+                    width="1240"
+                    height="600"
+                  />
                 </picture>
               </SwiperSlide>
             ))}

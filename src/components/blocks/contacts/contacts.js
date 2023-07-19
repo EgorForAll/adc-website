@@ -1,7 +1,7 @@
-import React, {useEffect, useRef} from "react";
-import useScript from "../../custom-hook/use-script/use-script";
-import { urlMap } from "../../../const";
-import { observerOpacity } from "../../../utils";
+import React, { useEffect, useRef } from 'react';
+import useScript from '../../custom-hook/use-script/use-script';
+import { urlMap } from '../../../const';
+import { observerOpacity } from '../../../utils';
 
 const Contacts = () => {
   const mainMapRef = useRef();
@@ -23,14 +23,17 @@ const Contacts = () => {
             </span>
             <h3 className="contacts__address-subtitle ">Tелефоны</h3>
             <div className="contacts__link-wrapper">
-              <a className="contacts__link" href="tel:88316121737"><span className="contacts__address-text telephone">8-(831)-612-17-37</span></a>
-              <a className="contacts__link" href="tel:88316121728"><span className="contacts__address-text telephone">8-(831)-612-17-28</span></a>
+              <a className="contacts__link" href="tel:88316121737">
+                <span className="contacts__address-text telephone">8-(831)-612-17-37</span>
+              </a>
+              <a className="contacts__link" href="tel:88316121728">
+                <span className="contacts__address-text telephone">8-(831)-612-17-28</span>
+              </a>
             </div>
             <h3 className="contacts__address-subtitle ">Время работы</h3>
             <span className="contacts__address-text">пн - пт 8:00 - 17:00</span>
           </div>
-          <div className="contacts__map" ref={mainMapRef}>
-          </div>
+          <div className="contacts__map" ref={mainMapRef}></div>
         </div>
       </div>
     </section>

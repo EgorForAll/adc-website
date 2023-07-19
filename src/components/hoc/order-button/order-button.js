@@ -1,5 +1,4 @@
-import React from "react";
-
+import React from 'react';
 
 function OrderButton(WrappedComponent, isOpened, setOpen, click, service) {
   return class extends React.Component {
@@ -9,7 +8,7 @@ function OrderButton(WrappedComponent, isOpened, setOpen, click, service) {
       this.handleEsc = this.handleEsc.bind(this);
       this.state = {
         isModalOpen: isOpened
-      }
+      };
     }
 
     handleEsc(evt) {
@@ -29,10 +28,10 @@ function OrderButton(WrappedComponent, isOpened, setOpen, click, service) {
     }
 
     onClickButton() {
-       if (click) {
+      if (click) {
         click(service);
-       }
-      setOpen(true)
+      }
+      setOpen(true);
     }
 
     render() {
@@ -40,6 +39,5 @@ function OrderButton(WrappedComponent, isOpened, setOpen, click, service) {
     }
   };
 }
-
 
 export default OrderButton;
