@@ -1,13 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { contactsList } from '../../../const';
-import { urlMap } from '../../../const';
-import useScript from '../../custom-hook/use-script/use-script';
 import { observerOpacity } from '../../../utils';
 
 const Contacts = () => {
-  const contactsPageMapRef = useRef();
-  useScript(urlMap, contactsPageMapRef);
-
   useEffect(() => {
     observerOpacity.observe(document.querySelector('.contacts-page__info'));
   }, []);
@@ -46,7 +41,13 @@ const Contacts = () => {
             ))}
           </ul>
         </div>
-        <div className="contacts-page__map" ref={contactsPageMapRef}></div>
+        <div className="contacts-page__map">
+          <iframe
+            src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=170996698827"
+            width="100%"
+            height="100%"
+            frameborder="0"></iframe>
+        </div>
       </div>
     </section>
   );
