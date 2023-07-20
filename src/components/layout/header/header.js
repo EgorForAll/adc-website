@@ -31,10 +31,10 @@ const Header = () => {
     <header className="page-header">
       <div className="header__wrapper">
         <div className="header__left">
-          <Link to="/" className="header__logo">
+          <Link to="/" className="header__logo" aria-label="ссылка на главную страницу">
             <picture>
               <source media="(max-width: 1152px)" srcSet={Logo} />
-              <img height="50" className="header__img" src={LogoDesk} alt="Логотип" />
+              <img height="50" width="150" className="header__img" src={LogoDesk} alt="Логотип" />
             </picture>
           </Link>
           <button className="header__button" onClick={() => setStatus(!isOpened)}></button>
@@ -42,13 +42,16 @@ const Header = () => {
         <nav
           className="header__nav"
           style={{ display: `${isMobile && !isOpened ? `none` : 'flex'}` }}>
-          <Link to="/" className={isMainPage()}>
+          <Link aria-label="ссылка на главную страницу" to="/" className={isMainPage()}>
             Главная
           </Link>
-          <Link to="/catalog" className={isCatalogPage()}>
+          <Link aria-label="ссылка на страницу каталога" to="/catalog" className={isCatalogPage()}>
             Каталог
           </Link>
-          <Link to="/contacts" className={isContactsPage()}>
+          <Link
+            aria-label="ссылка на страницу с контактами"
+            to="/contacts"
+            className={isContactsPage()}>
             Контакты
           </Link>
         </nav>

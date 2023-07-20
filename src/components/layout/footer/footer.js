@@ -10,15 +10,22 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__wrapper">
-        <a href="https://vk.com/adc52" className="footer__link" onClick={() => openLink()}>
+        <a
+          href="https://vk.com/adc52"
+          aria-label="Переход на главную страницу"
+          className="footer__link"
+          onClick={() => openLink()}>
           <picture>
             <source media="(max-width: 1152px)" srcSet={Logo} />
-            <img height="50" className="header__img" src={LogoDesk} alt="Логотип" />
+            <img height="50" width="150" className="header__img" src={LogoDesk} alt="Логотип" />
           </picture>
         </a>
         <div className="footer__links">
           <span className="footer__text">Подписывайтесь на нас:</span>
-          <Link to={{ pathname: 'https://vk.com/adc52' }} target="_blank">
+          <Link
+            aria-label="Ссылка на наше сообщество Вконтакте"
+            to={{ pathname: 'https://vk.com/adc52' }}
+            target="_blank">
             <SVG src={Vk} />
           </Link>
         </div>

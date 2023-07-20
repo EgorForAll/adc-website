@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import { contactsList } from '../../../const';
 import { observerOpacity } from '../../../utils';
 
@@ -17,8 +17,15 @@ const Contacts = () => {
               Адрес: Нижегородская область, Городецкий район, г. Заволжье, ул. Баумана 1а.
             </span>
             <span className="contacts-page__text">
-              Контактные номера стола заказов: <a href="tel:+78316121737">+7-831-612-17-37</a>,{' '}
-              <a href="tel:+78316121728">+7-831-612-17-28</a>.
+              Контактные номера стола заказов:{' '}
+              <a href="tel:+78316121737" aria-label="Телефон стола заказов">
+                +7-831-612-17-37
+              </a>
+              ,{' '}
+              <a href="tel:+78316121728" aria-label="Телефон стола заказов">
+                +7-831-612-17-28
+              </a>
+              .
             </span>
             <span className="contacts-page__text">
               Электронная почта: <a href="mailto:zst_dir@mail.ru">zst_dir@mail.ru</a>.
@@ -34,7 +41,10 @@ const Contacts = () => {
                 </span>
                 {item.email ? (
                   <span className="contacts-page__personal-text">
-                    Email: <a href={`mailto:${item.email}`}>zst_dir@mail.ru</a>
+                    Email:{' '}
+                    <a href={`mailto:${item.email}`} aria-label="Электронная почта компании">
+                      zst_dir@mail.ru
+                    </a>
                   </span>
                 ) : null}
               </li>
@@ -43,10 +53,11 @@ const Contacts = () => {
         </div>
         <div className="contacts-page__map">
           <iframe
+            title="Геолокация компании"
             src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=170996698827"
             width="100%"
             height="100%"
-            frameborder="0"></iframe>
+            frameBorder="0"></iframe>
         </div>
       </div>
     </section>
