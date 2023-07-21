@@ -16,8 +16,8 @@ const Footer = () => {
           className="footer__link"
           onClick={() => openLink()}>
           <picture>
-            <source media="(max-width: 1152px)" srcSet={Logo} />
-            <img height="50" width="150" className="header__img" src={LogoDesk} alt="Логотип" />
+            <source media="(max-width: 1152px)" srcSet={Logo} height={20} width={100} />
+            <img height="50" className="header__img" src={LogoDesk} alt="Логотип" />
           </picture>
         </a>
         <div className="footer__links">

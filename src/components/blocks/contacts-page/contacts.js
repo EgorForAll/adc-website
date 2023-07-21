@@ -1,8 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import useScript from '../../../custom-hook/use-script';
+import { urlMap } from '../../../const';
 import { contactsList } from '../../../const';
 import { observerOpacity } from '../../../utils';
 
 const Contacts = () => {
+  const mapRef = useRef();
+  useScript(urlMap, mapRef);
+
   useEffect(() => {
     observerOpacity.observe(document.querySelector('.contacts-page__info'));
   }, []);
@@ -51,14 +56,7 @@ const Contacts = () => {
             ))}
           </ul>
         </div>
-        <div className="contacts-page__map">
-          <iframe
-            title="Геолокация компании"
-            src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=170996698827"
-            width="100%"
-            height="100%"
-            frameBorder="0"></iframe>
-        </div>
+        <div className="contacts-page__map" ref={mapRef}></div>
       </div>
     </section>
   );

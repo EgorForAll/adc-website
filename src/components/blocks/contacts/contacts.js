@@ -1,7 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
+import useScript from '../../../custom-hook/use-script';
+import { urlMap } from '../../../const';
 import { observerOpacity } from '../../../utils';
 
 const Contacts = () => {
+  const mainMapRef = useRef();
+  useScript(urlMap, mainMapRef);
+
   useEffect(() => {
     observerOpacity.observe(document.querySelector('.contacts__container'));
   }, []);
@@ -28,14 +33,7 @@ const Contacts = () => {
             <h3 className="contacts__address-subtitle ">Время работы</h3>
             <span className="contacts__address-text">пн - пт 8:00 - 17:00</span>
           </div>
-          <div className="contacts__map">
-            <iframe
-              title="Местоположение компании"
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A918c38d381c35337998aac1e04dc9c7b0dbd42ca290acd629ba2bd55d2ab175a&amp;source=constructor"
-              width="100%"
-              height="100%"
-              frameBorder="0"></iframe>
-          </div>
+          <div className="contacts__map" ref={mainMapRef}></div>
         </div>
       </div>
     </section>
