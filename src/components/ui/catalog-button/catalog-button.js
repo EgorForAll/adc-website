@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const CatalogButton = ({ onClick }) => {
   return (
-    <button className="card__button" onClick={() => onClick()}>
+    <button className="card__button" aria-label="Записаться на услугу" onClick={() => onClick()}>
       Записаться на услугу
     </button>
   );

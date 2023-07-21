@@ -57,6 +57,7 @@
 .intro__title {
   margin-top: 100px;
   margin-bottom: 0;
+  font-display: swap;
   color: $bisque-color;
   font-size: 60px;
   font-weight: 700;
@@ -75,6 +76,7 @@
   font-size: 30px;
   color: $bisque-color;
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   font-weight: 400;
 
   @media (max-width: $desktop-width) {

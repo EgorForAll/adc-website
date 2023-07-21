@@ -6,11 +6,11 @@
 }
 
 .advatages-wrapper {
-@include make-center;
-flex-direction: column;
-@media (max-width: $desktop-width) {
-  margin: 0 20px;
-}
+  @include make-center;
+  flex-direction: column;
+  @media (max-width: $desktop-width) {
+    margin: 0 20px;
+  }
 }
 
 .advantages__title {
@@ -32,7 +32,7 @@ flex-direction: column;
   row-gap: 70px;
 
   @media (max-width: $desktop-width) {
-    @include flexSize (100%, 1000px);
+    @include flexSize(100%, 1000px);
     margin: 0;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -71,7 +71,7 @@ flex-direction: column;
     left: 20px;
     content: '';
     @include size(125px, 125px);
-    background-image: url("./assets/img/advantages-svg/quality.svg");
+    background-image: url('./assets/img/advantages-svg/quality.svg');
     background-repeat: no-repeat;
     transform: translate(10px, 30px);
     @media (max-width: $desktop-width) {
@@ -83,27 +83,27 @@ flex-direction: column;
 
   &:nth-child(2) {
     &::before {
-      background-image: url("./assets/img/advantages-svg/experience.svg");
+      background-image: url('./assets/img/advantages-svg/experience.svg');
     }
   }
   &:nth-child(3) {
     &::before {
-      background-image: url("./assets/img/advantages-svg/one-place.svg");
+      background-image: url('./assets/img/advantages-svg/one-place.svg');
     }
   }
   &:nth-child(4) {
     &::before {
-      background-image: url("./assets/img/advantages-svg/buses.svg");
+      background-image: url('./assets/img/advantages-svg/buses.svg');
     }
   }
   &:nth-child(5) {
     &::before {
-      background-image: url("./assets/img/advantages-svg/truck.svg");
+      background-image: url('./assets/img/advantages-svg/truck.svg');
     }
   }
   &:nth-child(6) {
     &::before {
-      background-image: url("./assets/img/advantages-svg/control.svg");
+      background-image: url('./assets/img/advantages-svg/control.svg');
     }
   }
 }
@@ -113,6 +113,7 @@ flex-direction: column;
   font-family: $PT-Sans-Caption;
   font-size: 20px;
   font-weight: 400;
+  font-display: swap;
   text-align: center;
   line-height: 30px;
   display: flex;

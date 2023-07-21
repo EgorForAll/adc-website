@@ -37,7 +37,10 @@ const Header = () => {
               <img height="50" className="header__img" src={LogoDesk} alt="Логотип" />
             </picture>
           </Link>
-          <button className="header__button" onClick={() => setStatus(!isOpened)}></button>
+          <button
+            className="header__button"
+            aria-label="Открыть меню сайта"
+            onClick={() => setStatus(!isOpened)}></button>
         </div>
         <nav
           className="header__nav"

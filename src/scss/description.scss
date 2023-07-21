@@ -1,7 +1,7 @@
-
 figcaption {
   text-align: center;
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   font-size: 18px;
   color: #363636;
   font-weight: 700;
@@ -53,12 +53,12 @@ figure {
   }
 }
 
-
 .description__text {
   width: 600px;
   text-align: justify;
   line-height: 30px;
   align-self: center;
+  font-display: swap;
   font-size: 20px;
   font-family: $PT-Sans-Caption;
   color: #363636;

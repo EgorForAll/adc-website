@@ -51,11 +51,11 @@
   }
 }
 
-
 .contacts__company {
   margin: 0;
   margin-bottom: 30px;
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   font-weight: 700;
   font-size: 30px;
 
@@ -68,6 +68,7 @@
 
 .contacts__address-text {
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   font-size: 18px;
   font-weight: 400;
   color: #ffffff;
@@ -91,6 +92,7 @@
   font-family: $PT-Sans-Caption;
   font-size: 25px;
   font-weight: 700;
+  font-display: swap;
   color: #ffde88;
   text-transform: uppercase;
   margin: 0;
@@ -102,6 +104,7 @@
 
 .contacts__time {
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   font-size: 20px;
   font-weight: 700;
 
@@ -120,6 +123,8 @@
 
 .contacts__link {
   text-decoration: none;
+  font-display: swap;
+  font-family: $PT-Sans-Caption;
   margin-bottom: 10px;
 
   &:nth-child(2) {

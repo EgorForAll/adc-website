@@ -17,6 +17,9 @@
 }
 
 .footer__link {
+  font-display: swap;
+  font-family: $PT-Sans-Caption;
+  font-weight: 400;
   @media (max-width: $desktop-width) {
     width: 100%;
     text-align: center;
@@ -40,6 +43,7 @@
   font-family: $PT-Sans-Caption;
   font-size: 20px;
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
   color: $bisque-color;
   @media (max-width: $desktop-width) {
@@ -68,5 +72,8 @@
 
 .footer__copyright {
   font-size: 18px;
+  font-display: swap;
+  font-family: $PT-Sans-Caption;
+  font-weight: 400;
   color: $bisque-color;
 }

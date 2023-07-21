@@ -25,7 +25,6 @@
   }
 }
 
-
 .modal-window__tab {
   display: flex;
   justify-content: space-between;
@@ -37,6 +36,7 @@
 .modal-window__title {
   font-family: $PT-Sans-Caption;
   color: $bisque-color;
+  font-display: swap;
   font-weight: 700;
   font-size: 25px;
   margin: 0;
@@ -58,7 +58,7 @@
 
 .modal-window__btn-close {
   position: relative;
-  @include size (30px, 30px);
+  @include size(30px, 30px);
   border: none;
   background-color: transparent;
   opacity: 0.5;
@@ -80,7 +80,6 @@
   background-color: #151313;
 }
 
-
 .modal-window__form {
   display: flex;
   flex-direction: column;
@@ -95,6 +94,7 @@
 
 .modal__window-subtitle {
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   color: $bisque-color;
   font-size: 20px;
   font-weight: 400;
@@ -122,6 +122,7 @@
   margin: 0;
   padding: 5px 10px;
   box-sizing: border-box;
+  font-display: swap;
   background-color: #d8d7d7;
   border-radius: 10px;
   font-family: $PT-Sans-Caption;
@@ -138,7 +139,6 @@
 .input-overlay {
   background-color: #5d5d5d;
 }
-
 
 .modal__window__button-submit {
   position: relative;
@@ -196,6 +196,7 @@
   display: inline-flex;
   border-radius: 10px;
   align-items: center;
+  font-display: swap;
   color: #fff;
   font-size: 13px;
   font-family: $PT-Sans-Caption;

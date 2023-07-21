@@ -7,29 +7,30 @@
   }
 }
 
-@mixin size ($width, $height) {
+@mixin size($width, $height) {
   width: $width;
   height: $height;
 }
 
-@mixin flexSize ($width, $height) {
+@mixin flexSize($width, $height) {
   width: $width;
   min-height: $height;
 }
 
-@mixin list () {
+@mixin list() {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-@mixin section-title ($color) {
+@mixin section-title($color) {
   position: relative;
   margin: 50px auto 0;
   display: flex;
   color: $color;
   font-size: 40px;
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   font-weight: bold;
   @media (max-width: $desktop-width) {
     margin: 30px auto 0;
@@ -43,7 +44,7 @@
     top: 20px;
     left: -130px;
     width: 100px;
-    height: 20px;;
+    height: 20px;
     border-top: 1px solid $color;
     border-bottom: 1px solid $color;
     @media (max-width: $desktop-width) {
@@ -51,24 +52,24 @@
     }
   }
   &::after {
-      position: absolute;
-      content: '';
-      top: 20px;
-      right: -130px;
-      width: 100px;
-      height: 20px;;
-      border-top: 1px solid $color;
-      border-bottom: 1px solid $color;
-      @media (max-width: $desktop-width) {
-        display: none;
-      }
+    position: absolute;
+    content: '';
+    top: 20px;
+    right: -130px;
+    width: 100px;
+    height: 20px;
+    border-top: 1px solid $color;
+    border-bottom: 1px solid $color;
+    @media (max-width: $desktop-width) {
+      display: none;
     }
+  }
 }
 
-@mixin msgInModal ($bg-color, $color) {
+@mixin msgInModal($bg-color, $color) {
   margin-top: 10px;
   border-radius: 10px;
-  padding:5px 10px;
+  padding: 5px 10px;
   text-align: justify;
   font-family: $PT-Sans-Caption;
   font-size: 15px;
@@ -79,7 +80,7 @@
   animation: opacityAni 1s forwards;
 }
 
-@mixin sliderButton () {
+@mixin sliderButton() {
   color: $bisque-color !important;
   &:hover {
     color: $background-color !important;
@@ -93,7 +94,7 @@
   }
 }
 
-@mixin opacity () {
+@mixin opacity() {
   opacity: 0;
   animation: opacityAni 1s forwards;
 }
@@ -104,7 +105,12 @@
 }
 
 @mixin new() {
-  position: absolute; overflow: hidden; top: 15px; left: 0; width: 0;
-  text-align: right; white-space: nowrap;
+  position: absolute;
+  overflow: hidden;
+  top: 15px;
+  left: 0;
+  width: 0;
+  text-align: right;
+  white-space: nowrap;
   animation: ani 1s linear forwards;
 }

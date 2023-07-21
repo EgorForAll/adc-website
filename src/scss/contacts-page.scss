@@ -56,6 +56,7 @@
 .contacts-page__text {
   width: 100%;
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   font-size: 20px;
   color: #000;
   font-weight: 400;
@@ -78,7 +79,7 @@
 
   @media (max-width: $desktop-width) {
     display: flex;
-    flex-direction: column;;
+    flex-direction: column;
   }
 }
 
@@ -120,6 +121,7 @@
   height: 50px;
   display: flex;
   align-items: center;
+  font-display: swap;
   font-size: 18px;
   font-family: $PT-Sans-Caption;
   font-weight: 400;
@@ -132,6 +134,7 @@
 
 .contacts-page__personal-text {
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   font-weight: 400;
   font-size: 15px;
   color: #000;
@@ -139,7 +142,7 @@
 }
 
 .contacts-page__map {
-  @include size (50%, 800px);
+  @include size(50%, 800px);
   margin-top: 50px;
   border-radius: 30px;
   @media (max-width: $desktop-width) {

@@ -58,8 +58,8 @@
     grid-template-rows: 1fr 1fr;
     gap: 0px 0px;
     grid-template-areas:
-      "team__item-wrapper team__item-text1"
-      "team__item-wrapper team__item-text2";
+      'team__item-wrapper team__item-text1'
+      'team__item-wrapper team__item-text2';
   }
 }
 
@@ -74,7 +74,7 @@
 }
 
 .team__title {
-  @include section-title ($background-color);
+  @include section-title($background-color);
   margin-top: 10px;
 }
 
@@ -92,9 +92,11 @@
   }
 }
 
-.team__item-text1, .team__item-text2 {
+.team__item-text1,
+.team__item-text2 {
   display: block;
   font-family: $PT-Sans-Caption;
+  font-display: swap;
   line-height: 23px;
   color: $background-color;
   font-size: 16px;

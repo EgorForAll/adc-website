@@ -172,7 +172,10 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
                 Согласие на обработку персональных данных
               </label>
             </div>
-            <button className="modal__window__button-submit" type="submit">
+            <button
+              className="modal__window__button-submit"
+              type="submit"
+              aria-label="Отпправить заявку">
               Отправить заявку
             </button>
           </form>
