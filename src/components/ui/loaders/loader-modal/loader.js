@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Loader = () => {
+const LoaderModal = () => {
   return <span className="loader"></span>;
 };
 
-export default Loader;
+export default LoaderModal;

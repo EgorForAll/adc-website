@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import OrderButton from '../../hoc/order-button/order-button';
 import IntroButton from '../../ui/intro-button/intro-button';
 import ModalWindow from '../modal-window/modal-window';
+import LoaderModal from '../../ui/loaders/loader-modal/loader';
 import { useEffect } from 'react';
 import { observerSlide, observerOpacity } from '../../../utils';
-import Loader from '../../ui/loader/loader';
 
 const Intro = () => {
   const [isOpened, setOpen] = useState(false);
@@ -28,7 +28,7 @@ const Intro = () => {
         <OrderButtonIntro />
         {isOpened ? <ModalWindow setOpen={setOpen} setLoader={setLoader} /> : null}
       </div>
-      {loader ? <Loader /> : null}
+      {loader ? <LoaderModal /> : null}
     </section>
   );
 };

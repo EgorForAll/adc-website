@@ -1,4 +1,4 @@
-.loader {
+.loader-app {
   position: absolute;
   top: 47%;
   left: 50%;
@@ -14,13 +14,6 @@
   box-sizing: border-box;
   animation: rotation 1s linear infinite;
 }
-
-.loader-app {
-  @extend .loader;
-  margin-top: 25%;
-  left: 50%;
-}
-
 .loader::after {
   content: '';
   box-sizing: border-box;

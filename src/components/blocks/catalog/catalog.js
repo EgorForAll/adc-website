@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { catalogList } from '../../../const';
 import ProductCard from '../product-card/product-card';
 import ModalWindow from '../modal-window/modal-window';
-import Loader from '../../ui/loader/loader';
+import LoaderModal from '../../ui/loaders/loader-modal/loader';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -21,7 +21,7 @@ const Catalog = ({ service }) => {
         </ul>
       </div>
       {isOpened ? <ModalWindow setOpen={setOpen} setLoader={setLoader} service={service} /> : null}
-      {loader ? <Loader /> : null}
+      {loader ? <LoaderModal /> : null}
     </section>
   );
 };

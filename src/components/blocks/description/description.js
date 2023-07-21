@@ -1,5 +1,5 @@
 import React from 'react';
-import DescImg from '../../../assets/img/adc-main.jpg';
+import DescImg from '../../../assets/img/adc-main.webp';
 import { useEffect } from 'react';
 import { observerOpacity } from '../../../utils';
 
