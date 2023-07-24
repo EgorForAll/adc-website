@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { teamList } from '../../../const';
-import { observerSlide } from '../../../utils';
+import { observerOpacity } from '../../../utils';
 
 const Team = () => {
   useEffect(() => {
     const items = document.querySelectorAll('.team__item');
     for (let item of items) {
-      observerSlide.observe(item);
+      observerOpacity.observe(item);
     }
   }, []);
 

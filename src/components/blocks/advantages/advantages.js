@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
 import { advantagesList } from '../../../const';
-import { observerSlide } from '../../../utils';
+import { observerOpacity } from '../../../utils';
 
 const Adavantages = () => {
   useEffect(() => {
     const items = document.querySelectorAll('.advantages__item');
     for (let item of items) {
-      observerSlide.observe(item);
+      observerOpacity.observe(item);
     }
   });
 

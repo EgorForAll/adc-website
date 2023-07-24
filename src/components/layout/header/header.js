@@ -49,7 +49,7 @@ const Header = () => {
             Главная
           </Link>
           <Link aria-label="ссылка на страницу каталога" to="/catalog" className={isCatalogPage()}>
-            Каталог
+            Услуги
           </Link>
           <Link
             aria-label="ссылка на страницу с контактами"
