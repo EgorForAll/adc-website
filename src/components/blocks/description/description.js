@@ -11,19 +11,19 @@ const Description = () => {
   return (
     <section className="page-description">
       <h2 className="visually-hidden">О нас</h2>
-      <article className="description__wrapper">
-        <div className="description__img-overlay" itemType="http://schema.org/ImageObject">
-          <figure>
-            <img
-              width="500"
-              height="300"
-              className="description__img"
-              src={DescImg}
-              alt="Главный вход"
-              itemProp="contentUrl"
-            />
-            <figcaption itemProp="name">Въезд в ремонтный бокс</figcaption>
-          </figure>
+      <article itemScope className="description__wrapper" itemType="http://schema.org/ImageObject">
+        <div className="description__img-overlay">
+          <img
+            width="500"
+            height="300"
+            className="description__img"
+            src={DescImg}
+            alt="Главный вход"
+            itemProp="contentUrl"
+          />
+          <h3 itemProp="name" className="description__image-subtitle">
+            Въезд в ремонтный бокс
+          </h3>
         </div>
         <p className="description__text" itemProp="description">
           Мы ООО “АДС” - автосервис в г. Заволжье. Специализируемся на комплексной диагностике и
