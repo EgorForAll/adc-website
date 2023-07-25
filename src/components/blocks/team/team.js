@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy } from 'react';
 import { teamList } from '../../../const';
 import { observerOpacity } from '../../../utils';
+
+const TeamCard = lazy(() => import('./team-card'));
 
 const Team = () => {
   useEffect(() => {
@@ -16,19 +18,12 @@ const Team = () => {
         <h2 className="team__title">Наша команда</h2>
         <ul className="team__list">
           {teamList.map((item) => (
-            <li className="team__item" key={item.id}>
-              <div className="team__avatar-wrapper">
-                <img
-                  className="team__item-avatar"
-                  src={item.avatar}
-                  alt={item.name}
-                  width="125"
-                  height="125"
-                />
-              </div>
-              <span className="team__item-text1">{item.name}</span>
-              <span className="team__item-text2">{item.position}</span>
-            </li>
+            <TeamCard
+              name={item.name}
+              avatar={item.avatar}
+              position={item.position}
+              key={item.id}
+            />
           ))}
         </ul>
       </div>

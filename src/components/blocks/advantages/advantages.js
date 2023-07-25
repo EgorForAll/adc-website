@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy } from 'react';
 import { advantagesList } from '../../../const';
 import { observerOpacity } from '../../../utils';
+
+const AdvantagesItem = lazy(() => import('./advantages-item'));
 
 const Adavantages = () => {
   useEffect(() => {
@@ -16,9 +18,7 @@ const Adavantages = () => {
         <h2 className="advantages__title">Наши преимущества</h2>
         <ul className="advantages__list">
           {advantagesList.map((item) => (
-            <li className="advantages__item" key={advantagesList.indexOf(item)}>
-              <span className="advantages__item-text">{item}</span>
-            </li>
+            <AdvantagesItem key={advantagesList.indexOf(item)} item={item} />
           ))}
         </ul>
       </div>

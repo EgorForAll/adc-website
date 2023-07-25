@@ -4,13 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 import { rootReducer } from './store/reducer';
-import { preloadImages } from './utils';
-import { CASHED_IMAGES } from './const';
 import './main.scss';
 import App from './components/app/app';
-
-// Кэшируем изображения на странице
-preloadImages(CASHED_IMAGES);
 
 const store = configureStore({
   reducer: rootReducer

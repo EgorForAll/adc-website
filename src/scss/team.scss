@@ -68,6 +68,7 @@
   margin-bottom: 20px;
   object-fit: cover;
   z-index: 2;
+  aspect-ratio: 1 / 1;
   @media (max-width: $desktop-width) {
     transform: translateY(20px);
   }

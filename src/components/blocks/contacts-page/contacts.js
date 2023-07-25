@@ -6,7 +6,7 @@ import { observerOpacity } from '../../../utils';
 
 const Contacts = () => {
   const mapRef = useRef();
-  useScript(urlMap, mapRef);
+  document.addEventListener('load', useScript(urlMap, mapRef));
 
   useEffect(() => {
     observerOpacity.observe(document.querySelector('.contacts-page__info'));

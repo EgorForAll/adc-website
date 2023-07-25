@@ -82,21 +82,3 @@ export const observerOpacity = new IntersectionObserver((entries) => {
     }
   });
 });
-
-export const preloadImages = (array) => {
-  if (!preloadImages.list) {
-    preloadImages.list = [];
-  }
-  let list = preloadImages.list;
-  for (let i = 0; i < array.length; i++) {
-    var img = new Image();
-    img.onload = () => {
-      let index = list.indexOf(this);
-      if (index !== -1) {
-        list.splice(index, 1);
-      }
-    };
-    list.push(img);
-    img.src = array[i];
-  }
-};

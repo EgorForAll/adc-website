@@ -216,36 +216,3 @@ export const galleryList = [
 
 export const urlMap =
   'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A918c38d381c35337998aac1e04dc9c7b0dbd42ca290acd629ba2bd55d2ab175a&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true';
-
-export const CASHED_IMAGES = [
-  photo1,
-  photo2,
-  photo3,
-  photo4,
-  photo5,
-  photo6,
-  photo7,
-  photo8,
-  photo9,
-  photo1Mobile,
-  photo2Mobile,
-  photo3Mobile,
-  photo4Mobile,
-  photo5Mobile,
-  photo6Mobile,
-  photo7Mobile,
-  photo8Mobile,
-  photo9Mobile,
-  fedin,
-  misha,
-  director,
-  borisov,
-  emtyAvatar,
-  engine,
-  box,
-  shin,
-  wheel,
-  auto,
-  coverage,
-  chassis
-];
