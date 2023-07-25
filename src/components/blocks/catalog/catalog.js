@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, lazy } from 'react';
 import { catalogList } from '../../../const';
-import ProductCard from '../product-card/product-card';
 import ModalWindow from '../modal-window/modal-window';
 import LoaderModal from '../../ui/loaders/loader-modal/loader';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
+const ProductCard = lazy(() => import('../product-card/product-card'));
 
 const Catalog = ({ service }) => {
   const [isOpened, setOpen] = useState(false);
@@ -13,7 +14,7 @@ const Catalog = ({ service }) => {
   return (
     <section className="catalog">
       <div className="catalog__wrapper">
-        <h2 className="catalog__title">Каталог услуг</h2>
+        <h2 className="catalog__title">Услуги автосервиса</h2>
         <ul className="catalog__services-container">
           {catalogList.map((item) => (
             <ProductCard key={item.id} product={item} isOpened={isOpened} setOpen={setOpen} />

@@ -45,9 +45,13 @@
   box-sizing: border-box;
   background-color: $bisque-color;
   border-radius: 45px;
+  transform: translateY(-150%);
+  animation: opacityCards 1.5s forwards;
+
   @media (max-width: $desktop-width) {
     margin-bottom: 10px;
     margin-right: 0;
+    transform: translateY(-200%);
   }
 }
 

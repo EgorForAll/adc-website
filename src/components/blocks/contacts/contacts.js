@@ -17,7 +17,7 @@ const Contacts = () => {
         <h2 className="contacts__title">Как нас найти</h2>
         <div className="contacts__container">
           <div className="contacts__address">
-            <h3 className="contacts__address-subtitle">Физический адрес</h3>
+            <h3 className="contacts__address-subtitle">Физический адрес автосервиса</h3>
             <span className="contacts__address-text">
               Нижегородская область, Городецкий район, г. Заволжье, ул. Баумана, 1а
             </span>

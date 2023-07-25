@@ -1,3 +1,5 @@
+import { array } from 'prop-types';
+
 export const isMobileScreen = () => (window.screen.width < 1152 ? true : false);
 
 const emailCheck = (input) =>
@@ -80,3 +82,21 @@ export const observerOpacity = new IntersectionObserver((entries) => {
     }
   });
 });
+
+export const preloadImages = (array) => {
+  if (!preloadImages.list) {
+    preloadImages.list = [];
+  }
+  let list = preloadImages.list;
+  for (let i = 0; i < array.length; i++) {
+    var img = new Image();
+    img.onload = () => {
+      let index = list.indexOf(this);
+      if (index !== -1) {
+        list.splice(index, 1);
+      }
+    };
+    list.push(img);
+    img.src = array[i];
+  }
+};

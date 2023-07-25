@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, EffectCube } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
 import { galleryList } from '../../../const';
-import { observerOpacity } from '../../../utils';
+import { observerOpacity, preloadImages, createNewArray } from '../../../utils';
+const SwiperImage = lazy(() => import('../../ui/swiper/swiper'));
 
 const Gallery = () => {
   useEffect(() => {
@@ -13,7 +14,7 @@ const Gallery = () => {
   return (
     <section className="gallery">
       <div className="gallery__wrapper">
-        <h2 className="gallery__title">Галлерея</h2>
+        <h2 className="gallery__title">Галлерея автосервиса</h2>
         <div className="gallery__container">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
@@ -24,21 +25,7 @@ const Gallery = () => {
             slidesPerView={1}>
             {galleryList.map((slide) => (
               <SwiperSlide key={slide.id}>
-                <picture>
-                  <source
-                    media="(max-width: 1152px)"
-                    srcSet={slide.url_mobile}
-                    width="320"
-                    height="155"
-                  />
-                  <img
-                    className="gallery__image"
-                    src={slide.url}
-                    alt={slide.alt}
-                    width="1240"
-                    height="600"
-                  />
-                </picture>
+                <SwiperImage url={slide.url} urlMobile={slide.url_mobile} alt={slide.alt} />
               </SwiperSlide>
             ))}
           </Swiper>

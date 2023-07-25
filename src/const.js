@@ -3,13 +3,13 @@ import emtyAvatar from './assets/img/team/emprty-avatar.svg';
 import fedin from './assets/img/team/fedin.webp';
 import borisov from './assets/img/team/borisov.webp';
 import misha from './assets/img/team/misha.webp';
-import engine from './assets/img/catalog-images/engine.png';
-import box from './assets/img/catalog-images/box.png';
-import chassis from './assets/img/catalog-images/chassis.png';
-import coverage from './assets/img/catalog-images/coverage.png';
-import auto from './assets/img/catalog-images/auto.png';
-import shin from './assets/img/catalog-images/shin.png';
-import wheel from './assets/img/catalog-images/wheel.png';
+import engine from './assets/img/catalog-images/engine.webp';
+import box from './assets/img/catalog-images/box.webp';
+import chassis from './assets/img/catalog-images/chassis.webp';
+import coverage from './assets/img/catalog-images/coverage.webp';
+import auto from './assets/img/catalog-images/auto.webp';
+import shin from './assets/img/catalog-images/shin.webp';
+import wheel from './assets/img/catalog-images/wheel.webp';
 import photo1 from './assets/img/gallery/photo1.webp';
 import photo2 from './assets/img/gallery/photo2.webp';
 import photo3 from './assets/img/gallery/photo3.webp';
@@ -216,3 +216,36 @@ export const galleryList = [
 
 export const urlMap =
   'https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A918c38d381c35337998aac1e04dc9c7b0dbd42ca290acd629ba2bd55d2ab175a&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true';
+
+export const CASHED_IMAGES = [
+  photo1,
+  photo2,
+  photo3,
+  photo4,
+  photo5,
+  photo6,
+  photo7,
+  photo8,
+  photo9,
+  photo1Mobile,
+  photo2Mobile,
+  photo3Mobile,
+  photo4Mobile,
+  photo5Mobile,
+  photo6Mobile,
+  photo7Mobile,
+  photo8Mobile,
+  photo9Mobile,
+  fedin,
+  misha,
+  director,
+  borisov,
+  emtyAvatar,
+  engine,
+  box,
+  shin,
+  wheel,
+  auto,
+  coverage,
+  chassis
+];

@@ -1,24 +1,53 @@
 @keyframes slide {
-  0% {transform: translateX(-150%);}
-  100% {transform: translateY(0);}
+  0% {
+    transform: translateX(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes modal-down {
-  0% {transform: translateY(-150%);}
-  100% {transform: translateY(0);}
+  0% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 @keyframes opacityAni {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes modal-up {
-  0% {transform: translateY(0);}
-  100% {transform: translateY(-200%);}
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
 }
 
 @keyframes opacityOverlay {
-  0% {opacity: 1;}
-  100% {opacity: 0;}
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes opacityCards {
+  0% {
+    transform: translateY(-150%);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
