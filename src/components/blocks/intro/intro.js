@@ -26,8 +26,8 @@ const Intro = () => {
           </p>
         </div>
         <OrderButtonIntro />
-        {isOpened ? <ModalWindow setOpen={setOpen} setLoader={setLoader} /> : null}
       </div>
+      {isOpened ? <ModalWindow setOpen={setOpen} setLoader={setLoader} /> : null}
       {loader ? <LoaderModal /> : null}
     </section>
   );
