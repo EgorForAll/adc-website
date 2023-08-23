@@ -150,7 +150,7 @@
 }
 
 .contacts-page__map {
-  @include size(50%, 500px);
+  @include size(50%, 530px);
   margin-top: 50px;
   border-radius: 30px;
   @media (max-width: $desktop-width) {

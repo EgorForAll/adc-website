@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import OrderButton from '../../hoc/order-button/order-button';
 import CatalogButton from '../../ui/catalog-button/catalog-button';
 import PropTypes from 'prop-types';
@@ -26,6 +26,11 @@ const ProductCard = ({ product, isOpened, setOpen }) => {
         <div className="card__description">
           <span className="card__description-text">{product.description}</span>
         </div>
+        {product.experts ? (
+          <div className="card__description" style={{ marginBottom: '10px' }}>
+            <span className="card__description-text">Эксперты: {product.experts}</span>
+          </div>
+        ) : null}
         <div className="card__button-wrapper">
           <OrderButtonCard onClick={() => onSelectService(product.name)} />
         </div>
