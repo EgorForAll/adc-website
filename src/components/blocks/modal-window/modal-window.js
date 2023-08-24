@@ -106,7 +106,7 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
               <label htmlFor="name" className="modal__window-subtitle">
                 Имя:
               </label>
-              <input id="name" name="user_name" className="modal-window__input name" type="text" />
+              <input id="name" name="name" className="modal-window__input name" type="text" />
             </div>
             <div className="modal-window__input-wrapper">
               <label htmlFor="telephone" className="modal__window-subtitle">
@@ -115,7 +115,7 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
               <input
                 id="telephone"
                 placeholder="+7-(000)-000-00-00"
-                name="user_phone"
+                name="telephone"
                 className="modal-window__input phone"
                 type="tel"
                 ref={phoneRef}
@@ -125,12 +125,7 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
               <label htmlFor="email" className="modal__window-subtitle">
                 Email:
               </label>
-              <input
-                id="email"
-                name="user_email"
-                className="modal-window__input email"
-                type="email"
-              />
+              <input id="email" name="email" className="modal-window__input email" type="email" />
             </div>
             <div className="modal-window__input-wrapper">
               <label className="modal__window-subtitle" htmlFor="type">
@@ -138,7 +133,7 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
               </label>
               <select
                 defaultValue={service}
-                name="user_services"
+                name="services"
                 className="modal-window__input"
                 id="type">
                 <option>-</option>
