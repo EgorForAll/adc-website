@@ -4,12 +4,14 @@ import MainPage from '../pages/main-page/main-page';
 import CatalogPage from '../pages/catalog-page/catalog-page';
 import ContactsPage from '../pages/contacts-page/contacts-page';
 import PageNotFound from '../pages/not-found/page-not-found';
+import DocsPage from '../pages/docs-page/docs-page';
 
 const App = () => {
   return (
     <Switch>
       <Route path="/catalog" component={CatalogPage} exact />
       <Route path="/contacts" component={ContactsPage} exact />
+      <Route path="/documents" component={DocsPage} />
       <Route path="/" component={MainPage} exact />
       <Route path="*" component={PageNotFound} />
     </Switch>

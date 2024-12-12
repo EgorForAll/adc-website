@@ -1,0 +1,43 @@
+.docs-page {
+  width: 100%;
+  background-color: #e1c9b3;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.docs-page__title {
+  @include section-title($black-grey-color);
+  margin-top: 50px;
+  @media (max-width: $desktop-width) {
+    width: min-content;
+    text-align: center;
+  }
+}
+
+.docs-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.docs-content {
+  @include make-center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  height: 75vh;
+  @media (max-width: $desktop-width) {
+    margin-bottom: 0;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+  }
+}
+
+.docs-list {
+  list-style-type: none;
+  li {
+    font-size: 18px;
+  }
+}

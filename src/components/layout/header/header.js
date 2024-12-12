@@ -27,6 +27,10 @@ const Header = () => {
     []
   );
 
+  const isDocsPage = useCallback(() =>
+    window.location.pathname.includes('/documetns') ? ' header__link--active' : 'header__link'
+  );
+
   return (
     <header className="page-header">
       <div className="header__wrapper">
@@ -56,6 +60,12 @@ const Header = () => {
             to="/contacts"
             className={isContactsPage()}>
             Контакты
+          </Link>
+          <Link
+            aria-label="ссылка на страницу с документами"
+            to="/documents"
+            className={isDocsPage()}>
+            Документы
           </Link>
         </nav>
       </div>
