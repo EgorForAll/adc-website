@@ -88,7 +88,9 @@ const Contacts = () => {
             {contactsList.map((item) => (
               <li className="contacts-page__personal-item" key={contactsList.indexOf(item)}>
                 <h3 className="contacts-page__personal-title">{item.name}</h3>
-                <span className="contacts-page__personal-text">Должность: {item.position}</span>
+                {item.position ? (
+                  <span className="contacts-page__personal-text">Должность: {item.position}</span>
+                ) : null}
                 <span className="contacts-page__personal-text">
                   Телефон: <a href={`tel:${item.telephone}`}>{item.telephone}</a>
                 </span>

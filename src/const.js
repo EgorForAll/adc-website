@@ -72,13 +72,6 @@ export const teamList = [
     name: 'Борисов Борис Борисович',
     position: 'Начальник участка мехобработки',
     avatar: borisov
-  },
-  {
-    id: 5,
-    name: 'Иванов Михаил Александрович',
-    position: 'Мастер участка покраски',
-    avatar: misha,
-    telephone: '+79867425515'
   }
 ];
 
@@ -152,9 +145,14 @@ export const contactsList = [
     telephone: '+79047879000'
   },
   {
-    name: 'Иванов Михаил Александрович',
-    position: 'Мастер участка покраски',
-    telephone: '+79867425515'
+    name: 'Борисов Борис Борисович',
+    position: 'Начальник участка мехобработки',
+    telephone: '+79047846413'
+  },
+  {
+    name: 'Эксперт техосмотра',
+    position: '',
+    telephone: '+79047846413'
   }
 ];
 

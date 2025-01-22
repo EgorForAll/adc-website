@@ -12,6 +12,11 @@ const Docs = () => {
                 График работы техосмотра
               </a>
             </li>
+            <li className="docs-list">
+              <a href="http://adc52.ru/assets/tariffs.pdf" target="_blank">
+                Тарифы на техосмотр
+              </a>
+            </li>
           </ul>
         </div>
       </div>

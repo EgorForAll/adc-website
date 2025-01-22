@@ -128,7 +128,9 @@
 .contacts-page__personal-title {
   height: 50px;
   display: flex;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   font-display: swap;
   font-size: 18px;
   font-family: $PT-Sans-Caption;
