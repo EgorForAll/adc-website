@@ -76,9 +76,10 @@
 
 .contacts-page__personal {
   @include list;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  justify-items: center;
 
   @media (max-width: $desktop-width) {
     display: flex;
@@ -89,7 +90,7 @@
 
 .contacts-page__personal-item {
   position: relative;
-  width: 275px;
+  width: 100%;
   min-height: 250px;
   display: flex;
   flex-direction: column;

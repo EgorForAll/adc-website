@@ -8,13 +8,23 @@ const Docs = () => {
         <div className="docs-content">
           <ul>
             <li className="docs-list">
-              <a href="http://adc52.ru/assets/tech.jpeg" target="_blank">
+              <a href="http://adc52.ru/docs/tech.jpeg" target="_blank">
                 График работы техосмотра
               </a>
             </li>
             <li className="docs-list">
-              <a href="http://adc52.ru/assets/tariffs.pdf" target="_blank">
+              <a href="http://adc52.ru/docs/tariffs.pdf" target="_blank">
                 Тарифы на техосмотр
+              </a>
+            </li>
+            <li className="docs-list">
+              <a href="http://adc52.ru/docs/duty-benefits.pdf" target="_blank">
+                Льготы при оплате госпошлины
+              </a>
+            </li>
+            <li className="docs-list">
+              <a href="http://adc52.ru/docs/duty-form.docx" target="_blank">
+                Инструкция по внесению информации об оплате государственной пошлины при создании ДК
               </a>
             </li>
           </ul>
