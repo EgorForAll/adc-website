@@ -10,6 +10,8 @@ import coverage from './assets/img/catalog-images/coverage.webp';
 import auto from './assets/img/catalog-images/auto.webp';
 import shin from './assets/img/catalog-images/shin.webp';
 import wheel from './assets/img/catalog-images/wheel.webp';
+import radiator from './assets/img/catalog-images/radiator.jpg';
+import selector from './assets/img/catalog-images/selector.jpg';
 import photo1 from './assets/img/gallery/photo1.webp';
 import photo2 from './assets/img/gallery/photo2.webp';
 import photo3 from './assets/img/gallery/photo3.webp';
@@ -123,6 +125,24 @@ export const catalogList = [
     description:
       'Проведение технического осмотра транспортного средства в соответствии с федеральным законом 170-ФЗ "О техническом осмотре транспортных средств".',
     image: auto,
+    experts: 'Иванов А.Н., Куделин Ю.В., Исаков С.В.'
+  },
+  {
+    id: 7,
+    name: 'Замена масла АКПП',
+    description:
+      'Замена масла в АКПП — профессиональное обслуживание автоматической коробки передач. Обеспечиваем плавность переключения передач, продлеваем срок службы АКПП и предотвращаем дорогостоящий ремонт.',
+    image: selector,
+    price: 3000,
+    experts: 'Иванов А.Н., Куделин Ю.В., Исаков С.В.'
+  },
+  {
+    id: 8,
+    name: 'Промывка радиаторов',
+    description:
+      'Комплексная очистка системы охлаждения от накипи, отложений и загрязнений. Восстанавливаем эффективную теплоотдачу, предотвращаем перегрев двигателя и продлеваем срок службы радиатора.',
+    image: radiator,
+    price: 2500,
     experts: 'Иванов А.Н., Куделин Ю.В., Исаков С.В.'
   }
 ];

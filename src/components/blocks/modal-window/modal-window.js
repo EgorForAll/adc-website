@@ -13,13 +13,20 @@ async function formSend(
   setSuccessMsg,
   setErrorMsg,
   successMsg,
-  errorMsg
+  errorMsg,
+  isChecked
 ) {
   evt.preventDefault();
   successMsg ? setSuccessMsg(false) : null;
   errorMsg ? setErrorMsg(false) : null;
+  
   let errors = formValidate(form);
   let formData = new FormData(form);
+  
+  // Добавляем состояние чекбокса в FormData
+  formData.append('checkbox', isChecked.toString());
+  
+  
   const inputs = modalWindow.querySelectorAll('.modal-window__input');
   if (errors === 0) {
     modalWindow.querySelector('.modal__window__button-submit').disabled = true;
@@ -29,12 +36,36 @@ async function formSend(
       input.disabled = true;
     }
     setLoader(true);
-    let response = await fetch('mail.php', {
-      method: 'POST',
-      body: formData
-    });
-    if (response.ok) {
-      form.reset();
+    
+    try {
+      let response = await fetch('mail.php', {
+        method: 'POST',
+        body: formData
+      });
+      
+      const result = await response.text();
+      
+      if (response.ok && result === 'Success') {
+        form.reset();
+        setLoader(false);
+        modalWindow.querySelector('.modal__window__button-submit').disabled = false;
+        modalWindow.classList.remove('modal-overlay');
+        for (let input of inputs) {
+          input.classList.remove('input-overlay');
+          input.disabled = false;
+        }
+        const errorInputs = modalWindow.querySelectorAll('.error');
+        if (errorInputs) {
+          for (let input of errorInputs) {
+            input.classList.remove('error');
+          }
+        }
+        successMsg ? null : setSuccessMsg(true);
+      } else {
+        throw new Error(result || 'Ошибка сервера');
+      }
+    } catch (error) {
+      console.error('Ошибка отправки формы:', error);
       setLoader(false);
       modalWindow.querySelector('.modal__window__button-submit').disabled = false;
       modalWindow.classList.remove('modal-overlay');
@@ -42,15 +73,7 @@ async function formSend(
         input.classList.remove('input-overlay');
         input.disabled = false;
       }
-      const errorInputs = modalWindow.querySelectorAll('.error');
-      if (errorInputs) {
-        for (let input of errorInputs) {
-          input.classList.remove('error');
-        }
-      }
-      successMsg ? null : setSuccessMsg(true);
-    } else {
-      alert('Не удается установить соединение. Поробуйте еще раз');
+      alert('Не удается установить соединение. Попробуйте еще раз');
     }
   } else {
     !errorMsg ? setErrorMsg(true) : null;
@@ -60,37 +83,57 @@ async function formSend(
 const ModalWindow = ({ setOpen, setLoader, service }) => {
   const [successMsg, setSuccessMsg] = useState(false);
   const [errorMsg, setErrorMsg] = useState(false);
+  const [isChecked, setIsChecked] = useState(false); // Состояние чекбокса
   const formRef = useRef();
   const modalRef = useRef();
   const phoneRef = useRef();
   const dispatch = useDispatch();
   const onSelectService = (service) => dispatch(selectService(service));
+  
   let today = new Date();
   let day = today.getDate();
   let month = today.getMonth() + 1;
   let year = today.getFullYear();
 
   useEffect(() => {
-    formRef.current.addEventListener('submit', (evt) =>
+    const formElement = formRef.current;
+    
+    const handleSubmit = (evt) =>
       formSend(
         evt,
-        formRef.current,
+        formElement,
         modalRef.current,
         setLoader,
         setSuccessMsg,
         setErrorMsg,
         successMsg,
-        errorMsg
-      )
-    );
-  });
+        errorMsg,
+        isChecked
+      );
+    
+    formElement.addEventListener('submit', handleSubmit);
+    
+    // Очистка эффекта
+    return () => {
+      formElement.removeEventListener('submit', handleSubmit);
+    };
+  }, [setLoader, successMsg, errorMsg, isChecked]);
 
   const closeModal = () => {
     document.querySelector('.overlay').classList.add('opacity-overlay');
     modalRef.current.classList.add('modal-up');
     errorMsg ? setErrorMsg(false) : null;
     successMsg ? setSuccessMsg(false) : null;
+    setIsChecked(false); // Сбрасываем чекбокс при закрытии
     setTimeout(() => setOpen(false), 1000);
+  };
+
+  const handleCheckboxChange = (evt) => {
+    setIsChecked(evt.target.checked);
+  };
+
+  const handleSelectChange = (evt) => {
+    onSelectService(evt.target.value);
   };
 
   return (
@@ -99,18 +142,28 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
         <div className="modal-window" ref={modalRef} onClick={(e) => e.stopPropagation()}>
           <div className="modal-window__tab">
             <h3 className="modal-window__title">Заполните заявку</h3>
-            <button className="modal-window__btn-close" onClick={() => closeModal()} />
+            <button 
+              className="modal-window__btn-close" 
+              onClick={() => closeModal()}
+              aria-label="Закрыть окно"
+            />
           </div>
           <form action="mail.php" className="modal-window__form" ref={formRef} method="POST">
             <div className="modal-window__input-wrapper">
               <label htmlFor="name" className="modal__window-subtitle">
-                Имя:
+                Имя: *
               </label>
-              <input id="name" name="name" className="modal-window__input name" type="text" />
+              <input 
+                id="name" 
+                name="name" 
+                className="modal-window__input name" 
+                type="text" 
+                required
+              />
             </div>
             <div className="modal-window__input-wrapper">
               <label htmlFor="telephone" className="modal__window-subtitle">
-                Телефон:
+                Телефон: *
               </label>
               <input
                 id="telephone"
@@ -119,13 +172,20 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
                 className="modal-window__input phone"
                 type="tel"
                 ref={phoneRef}
+                required
               />
             </div>
             <div className="modal-window__input-wrapper">
               <label htmlFor="email" className="modal__window-subtitle">
-                Email:
+                Email: *
               </label>
-              <input id="email" name="email" className="modal-window__input email" type="email" />
+              <input 
+                id="email" 
+                name="email" 
+                className="modal-window__input email" 
+                type="email" 
+                required
+              />
             </div>
             <div className="modal-window__input-wrapper">
               <label className="modal__window-subtitle" htmlFor="type">
@@ -135,13 +195,15 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
                 defaultValue={service}
                 name="services"
                 className="modal-window__input"
-                id="type">
-                <option>-</option>
-                {catalogList.map((item) => (
+                id="type"
+                onChange={handleSelectChange}
+              >
+                <option value="">-</option>
+                {catalogList.map((item, index) => (
                   <option
-                    key={catalogList.indexOf(item)}
+                    key={index}
                     value={item.name}
-                    onClick={() => onSelectService(item.name)}>
+                  >
                     {item.name}
                   </option>
                 ))}
@@ -155,7 +217,7 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
                 <input
                   id="date"
                   className="modal-window__input"
-                  min={`${year}-${month > 10 ? month : `0${month}`}-${day}`}
+                  min={`${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`}
                   name="day"
                   type="date"
                 />
@@ -167,15 +229,19 @@ const ModalWindow = ({ setOpen, setLoader, service }) => {
                 id="checkbox"
                 className="modal-window__input modal-window__input--checkbox"
                 type="checkbox"
+                checked={isChecked}
+                onChange={handleCheckboxChange}
+                required
               />
               <label htmlFor="checkbox" className="checkbox-label">
-                Согласие на обработку персональных данных
+                Согласие на обработку персональных данных *
               </label>
             </div>
             <button
               className="modal__window__button-submit"
               type="submit"
-              aria-label="Отпправить заявку">
+              aria-label="Отправить заявку"
+            >
               Отправить заявку
             </button>
           </form>

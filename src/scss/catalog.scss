@@ -111,3 +111,27 @@
   justify-content: center;
   align-items: center;
 }
+
+.card__footer {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.card__price-section {
+  margin-bottom: 12px;
+}
+
+.card__divider {
+  margin: 12px 0;
+  border: none;
+  border-top: 1px solid #363636;
+  width: 100%;
+}
+
+.card__price {
+  font-size: 16px;
+}
+
+.card__button-wrapper {
+  width: 100%;
+}
