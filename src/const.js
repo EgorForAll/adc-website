@@ -151,7 +151,7 @@ export const contactsList = [
   {
     name: 'Иванов Александр Николаевич',
     position: 'Директор',
-    telephone: '+79308150210',
+    telephone: '+79625093106',
     email: 'zst_dir@mail.ru'
   },
   {
